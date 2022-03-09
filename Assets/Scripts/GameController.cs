@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject player;
     private void Awake()
     {
         GameInputActions game_input_actions = new GameInputActions();

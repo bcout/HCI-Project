@@ -6,10 +6,11 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private GameObject cursor_object;
+    private GameObject cursor_prefab;
 
     private GameObject cursor;
     private Vector3 mouse_position;
+    private bool cursor_spawned;
 
     // Used to initalize the event-driven input system
     private void Awake()
@@ -24,20 +25,23 @@ public class PlayerController : MonoBehaviour
         player_input_actions.Player.Click.performed += HandleClick;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        // Instantiate the cursor for the player
-        cursor = Instantiate(cursor_object, transform.position, transform.rotation, transform);
+        cursor_spawned = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = false;
-        UpdateCursorPosition();
-        
+        LockCursorToGameWindow();
+        if (GameData.game_started)
+        {
+            if (!cursor_spawned)
+            {
+                SpawnCursor();
+            }
+            UpdateCursorPosition();
+        }
     }
 
     private void UpdateCursorPosition()
@@ -51,5 +55,18 @@ public class PlayerController : MonoBehaviour
     private void HandleClick(InputAction.CallbackContext context)
     {
         print("Clicked!");
+    }
+
+    public void SpawnCursor()
+    {
+        // Instantiate the cursor for the player
+        cursor = Instantiate(cursor_prefab, transform.position, transform.rotation, transform);
+        cursor_spawned = true;
+    }
+
+    private void LockCursorToGameWindow()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
     }
 }
