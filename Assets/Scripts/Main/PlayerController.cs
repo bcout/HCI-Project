@@ -54,7 +54,12 @@ public class PlayerController : MonoBehaviour
 
     private void HandleClick(InputAction.CallbackContext context)
     {
-        print("Clicked!");
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+        if (hit.collider != null)
+        {
+            Debug.Log("Target: " + hit.collider.gameObject.GetInstanceID());
+        }
     }
 
     public void SpawnCursor()
