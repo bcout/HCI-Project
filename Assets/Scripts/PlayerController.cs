@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
         // Instantiate the cursor for the player
         cursor = Instantiate(cursor_object, transform.position, transform.rotation, transform);
     }
@@ -35,6 +34,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
         UpdateCursorPosition();
         
     }
