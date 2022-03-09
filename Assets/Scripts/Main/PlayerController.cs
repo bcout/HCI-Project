@@ -63,8 +63,7 @@ public class PlayerController : MonoBehaviour
         if (hit.collider != null)
         {
             GameObject selected_target = hit.collider.gameObject;
-            print(selected_target.gameObject.name);
-            //game_controller.Score(selected_target);
+            game_controller.Score(selected_target);
         }
     }
 
