@@ -24,7 +24,7 @@ public class TargetSpawner : MonoBehaviour
         {
             if (coroutine_available)
             {
-                StartCoroutine("SpawnTarget");
+                StartCoroutine("SpawnTargetLoop");
                 coroutine_available = false;
             }
         }
@@ -38,17 +38,21 @@ public class TargetSpawner : MonoBehaviour
         //
     }
 
-    private IEnumerator SpawnTarget()
+    private IEnumerator SpawnTargetLoop()
     {
-        float spawn_x = Random.Range(GameData.left_border_val, GameData.right_border_val);
-        float spawn_y = Random.Range(GameData.bottom_border_val, GameData.top_border_val);
-        Vector2 spawn_point = new Vector2(spawn_x, spawn_y);
-        print(spawn_point);
-        Instantiate(target_prefab, spawn_point, Quaternion.identity, transform);
+        SpawnTarget();
         
         yield return new WaitForSeconds(0.1f);
 
         coroutine_available = true;
         num_targets_spawned++;
+    }
+
+    public void SpawnTarget()
+    {
+        float spawn_x = Random.Range(GameData.left_border_val, GameData.right_border_val);
+        float spawn_y = Random.Range(GameData.bottom_border_val, GameData.top_border_val);
+        Vector2 spawn_point = new Vector2(spawn_x, spawn_y);
+        Instantiate(target_prefab, spawn_point, Quaternion.identity, transform);
     }
 }

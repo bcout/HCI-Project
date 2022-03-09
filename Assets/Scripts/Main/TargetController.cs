@@ -26,7 +26,7 @@ public class TargetController : MonoBehaviour
     {
         if (GameData.game_started)
         {
-            RandomlyChangeDirection();
+            //RandomlyChangeDirection();
         }
         
     }

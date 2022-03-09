@@ -7,6 +7,7 @@ public static class GameData
     public static float right_border_val { get; set; }
     public static float bottom_border_val { get; set; }
     public static float top_border_val { get; set; }
+    public static int player_score { get; set; }
 
     static GameData()
     {
@@ -17,5 +18,7 @@ public static class GameData
         right_border_val = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, distance)).x - padding;
         bottom_border_val = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, distance)).y + padding;
         top_border_val = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, distance)).y - padding;
+
+        player_score = 0;
     }
 }

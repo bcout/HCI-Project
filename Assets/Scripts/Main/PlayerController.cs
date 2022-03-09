@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject cursor_prefab;
 
+    [SerializeField]
+    private GameController game_controller;
+
     private GameObject cursor;
     private Vector3 mouse_position;
     private bool cursor_spawned;
@@ -54,11 +57,14 @@ public class PlayerController : MonoBehaviour
 
     private void HandleClick(InputAction.CallbackContext context)
     {
-        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        int layer_mask = LayerMask.GetMask("Targets");
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, .1f, layer_mask);
 
         if (hit.collider != null)
         {
-            Debug.Log("Target: " + hit.collider.gameObject.GetInstanceID());
+            GameObject selected_target = hit.collider.gameObject;
+            print(selected_target.gameObject.name);
+            //game_controller.Score(selected_target);
         }
     }
 
@@ -66,6 +72,7 @@ public class PlayerController : MonoBehaviour
     {
         // Instantiate the cursor for the player
         cursor = Instantiate(cursor_prefab, transform.position, transform.rotation, transform);
+        cursor.name = "Cursor";
         cursor_spawned = true;
     }
 
