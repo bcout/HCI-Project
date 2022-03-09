@@ -426,6 +426,13 @@
             "usedInScenes": []
         },
         {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "TargetSpawner",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
             "managedAssemblyName": "Unity.InputSystem.dll",
             "nativeClass": "",
             "fullManagedTypeName": "UnityEngine.InputSystem.InputActionAsset",

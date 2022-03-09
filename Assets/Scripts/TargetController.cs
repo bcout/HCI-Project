@@ -4,50 +4,70 @@ using UnityEngine;
 
 public class TargetController : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject target_prefab;
-    private const int MAX_TARGETS = 35;
-    private int num_targets_spawned;
-    private bool coroutine_available;
+    private Vector2[] possible_vectors = { Vector2.right, Vector2.left, Vector2.down, Vector2.up };
+    private Vector2 velocity;
+    private float speed = 1f;
+    private float width;
+    private float height;
 
     // Start is called before the first frame update
     void Start()
     {
-        coroutine_available = true;
-        num_targets_spawned = 0;
+        int index = Random.Range(0, possible_vectors.Length);
+        velocity = possible_vectors[index];
+
+        SpriteRenderer spr_renderer = GetComponent<SpriteRenderer>();
+        width = spr_renderer.bounds.size.x;
+        height = spr_renderer.bounds.size.y;
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        if (num_targets_spawned < MAX_TARGETS)
+        if (GameData.game_started)
         {
-            if (coroutine_available)
-            {
-                StartCoroutine("SpawnTarget");
-                coroutine_available = false;
-            }
+            RandomlyChangeDirection();
         }
-        else
-        {
-            if (!GameData.game_started)
-            {
-                GameData.game_started = true;
-            }
-        }
-    }
-
-    private IEnumerator SpawnTarget()
-    {
-        float padding = 0.5f;
-        float spawn_x = Random.Range(GameData.left_border_val + padding, GameData.right_border_val - padding);
-        float spawn_y = Random.Range(GameData.bottom_border_val + padding, GameData.top_border_val - padding);
-        Vector2 spawn_point = new Vector2(spawn_x, spawn_y);
-        print(spawn_point);
-        Instantiate(target_prefab, spawn_point, Quaternion.identity, transform);
         
-        yield return new WaitForSeconds(0.1f);
+    }
 
-        coroutine_available = true;
-        num_targets_spawned++;
+    private void RandomlyChangeDirection()
+    {
+        int change = Random.Range(0, 200);
+        if (change == 0)
+        {
+            velocity = new Vector2(-velocity.x, -velocity.y);
+        }
+        if (change == 1)
+        {
+            if (velocity.x != 0f)
+            {
+                velocity = new Vector2(0f, velocity.x);
+            }
+            else
+            {
+                // We can assume that if the ghost isn't moving horizontally, then they are moving vertically
+                // and we can thus use velocity.y as a valid movement value for 'x'.
+                velocity = new Vector2(velocity.y, 0f);
+            }
+        }
+
+        if ((transform.position.x <= GameData.left_border_val + width / 2.0) && velocity.x < 0f)
+        {
+            velocity = Vector3.right;
+        }
+        if ((transform.position.x >= GameData.right_border_val - width / 2.0) && velocity.x > 0f)
+        {
+            velocity = Vector3.left;
+        }
+        if ((transform.position.y <= GameData.bottom_border_val + height / 2.0) && velocity.y < 0f)
+        {
+            velocity = Vector3.up;
+        }
+        if ((transform.position.y >= GameData.top_border_val - height / 2.0) && velocity.y > 0f)
+        {
+            velocity = Vector3.down;
+        }
+        transform.position = (Vector2)transform.position + velocity * Time.deltaTime * speed;
     }
 }

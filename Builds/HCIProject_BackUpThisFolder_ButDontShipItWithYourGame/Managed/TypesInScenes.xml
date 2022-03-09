@@ -41,6 +41,7 @@
 		<type fullname="GameController" preserve="nothing"/>
 		<type fullname="PlayerController" preserve="nothing"/>
 		<type fullname="TargetController" preserve="nothing"/>
+		<type fullname="TargetSpawner" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.InputSystem">
 		<type fullname="UnityEngine.InputSystem.InputActionAsset" preserve="nothing"/>
