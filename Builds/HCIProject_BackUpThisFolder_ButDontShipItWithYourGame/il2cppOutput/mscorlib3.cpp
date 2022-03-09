@@ -1378,10 +1378,14 @@ IL2CPP_EXTERN_C const uint32_t Decimal__cctor_m31DF36D725A6BE4283CF070A88CD62C5D
 IL2CPP_EXTERN_C const uint32_t Decimal__ctor_m01C926530B02CEC0643588B70AB93F62EA7A1AE8_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t Decimal__ctor_mD2BEAABCBAC5D1AF62D0F8E01B2DCD2B725B2C2C_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t Decimal__ctor_mDD90B92A99EE8915679A5D3171499236A7D08168_MetadataUsageId;
+IL2CPP_EXTERN_C const uint32_t Decimal_op_Addition_m9DCE5083B3B1FA372C6F72BD91FABC1FA5B76981_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t Decimal_op_Equality_mD69422DB0011607747F9D778C5409FBE732E4BDB_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t Decimal_op_Explicit_mB7F34E3B2DFB6211CA5ACB5497DA6CDCB09FC6CE_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t Decimal_op_Explicit_mC7ED730AE7C6D42F19F06246B242E8B60EDDAC62_MetadataUsageId;
+IL2CPP_EXTERN_C const uint32_t Decimal_op_Explicit_mDDBD21F45B44DFF341935F137EF9B45837303FD5_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t Decimal_op_Inequality_m18DB27574F40577B4D0D3C732BDA45135B41FD3D_MetadataUsageId;
+IL2CPP_EXTERN_C const uint32_t Decimal_op_Multiply_m115B4FBD28412B58E1911D92A895D7E5C39C2F08_MetadataUsageId;
+IL2CPP_EXTERN_C const uint32_t Decimal_op_Subtraction_mA8822FE4BA50620B0A58B46C8B46A08361C7FF4E_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t DefaultBinder_BindToField_mA843B725E842D3D3C70A277E3CC50DA324B0B929_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t DefaultBinder_BindToMethod_mE2CAB066AD030EF55D93E64A8E158C81EB97BC59_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t DefaultBinder_CanConvertPrimitiveObjectToType_mCC1ABC24B5EFEE2123F6D1076A4FED3E2D0D7037_MetadataUsageId;
@@ -16920,10 +16924,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OverflowException__ctor_mE1A042FFEBF00B7
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Decimal_ToInt32_m2C5AA3F6D2A2679FE6044D8A8D3EFD0F573703AC (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  ___d0, const RuntimeMethod* method);
 // System.Void System.Decimal::FCallTruncate(System.Decimal&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Decimal_FCallTruncate_m4122B0698F357F54C2E9B60BCDDA6F8EEECE99A2 (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 * ___d0, const RuntimeMethod* method);
+// System.Int64 System.Decimal::ToInt64(System.Decimal)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t Decimal_ToInt64_mB2D5CC63EDC9C99171ADA933FD133905D7FCCA72 (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  ___d0, const RuntimeMethod* method);
 // System.Single System.Decimal::ToSingle(System.Decimal)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Decimal_ToSingle_mFC3F4F77897B4034BE8BC5F1D3F35E2264ED9F8D (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  ___d0, const RuntimeMethod* method);
 // System.Double System.Decimal::ToDouble(System.Decimal)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double Decimal_ToDouble_m295040AEA515779CFF906B03F0727DECC27AC000 (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  ___d0, const RuntimeMethod* method);
+// System.Void System.Decimal::FCallAddSub(System.Decimal&,System.Decimal&,System.Byte)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Decimal_FCallAddSub_m43C9BC274869E9F054E0E83FDC03F184ECA4F3BB (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 * ___d10, Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 * ___d21, uint8_t ___bSign2, const RuntimeMethod* method);
+// System.Void System.Decimal::FCallMultiply(System.Decimal&,System.Decimal&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Decimal_FCallMultiply_mA29A048D19D0893A07EF110176394E462A8DCED7 (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 * ___d10, Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 * ___d21, const RuntimeMethod* method);
 // System.TypeCode System.Decimal::GetTypeCode()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Decimal_GetTypeCode_mD8A5AA9855B5CC0962E1E1E0DC0CB5B98399C315 (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 * __this, const RuntimeMethod* method);
 // System.Boolean System.Convert::ToBoolean(System.Decimal)
@@ -19629,6 +19639,13 @@ IL2CPP_EXTERN_C  void Decimal__ctor_mDD90B92A99EE8915679A5D3171499236A7D08168_Ad
 	Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 * _thisAdjusted = reinterpret_cast<Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 *>(__this + _offset);
 	Decimal__ctor_mDD90B92A99EE8915679A5D3171499236A7D08168(_thisAdjusted, ___lo0, ___mid1, ___hi2, ___flags3, method);
 }
+// System.Void System.Decimal::FCallAddSub(System.Decimal&,System.Decimal&,System.Byte)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Decimal_FCallAddSub_m43C9BC274869E9F054E0E83FDC03F184ECA4F3BB (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 * ___d10, Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 * ___d21, uint8_t ___bSign2, const RuntimeMethod* method)
+{
+	typedef void (*Decimal_FCallAddSub_m43C9BC274869E9F054E0E83FDC03F184ECA4F3BB_ftn) (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 *, Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 *, uint8_t);
+	using namespace il2cpp::icalls;
+	 ((Decimal_FCallAddSub_m43C9BC274869E9F054E0E83FDC03F184ECA4F3BB_ftn)mscorlib::System::Decimal::FCallAddSub) (___d10, ___d21, ___bSign2);
+}
 // System.Int32 System.Decimal::FCallCompare(System.Decimal&,System.Decimal&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Decimal_FCallCompare_mC72E1B2721A5D80C32071FE8180EC96259A0A6EA (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 * ___d10, Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 * ___d21, const RuntimeMethod* method)
 {
@@ -19972,6 +19989,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D9
 		Decimal__ctor_mDD90B92A99EE8915679A5D3171499236A7D08168((&L_51), ((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)((int32_t)L_2|(int32_t)((int32_t)((int32_t)L_5<<(int32_t)8))))|(int32_t)((int32_t)((int32_t)L_8<<(int32_t)((int32_t)16)))))|(int32_t)((int32_t)((int32_t)L_11<<(int32_t)((int32_t)24))))), L_48, L_49, L_50, /*hidden argument*/NULL);
 		return L_51;
 	}
+}
+// System.Void System.Decimal::FCallMultiply(System.Decimal&,System.Decimal&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Decimal_FCallMultiply_mA29A048D19D0893A07EF110176394E462A8DCED7 (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 * ___d10, Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 * ___d21, const RuntimeMethod* method)
+{
+	typedef void (*Decimal_FCallMultiply_mA29A048D19D0893A07EF110176394E462A8DCED7_ftn) (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 *, Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 *);
+	using namespace il2cpp::icalls;
+	 ((Decimal_FCallMultiply_mA29A048D19D0893A07EF110176394E462A8DCED7_ftn)mscorlib::System::Decimal::FCallMultiply) (___d10, ___d21);
 }
 // System.Decimal System.Decimal::Round(System.Decimal,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  Decimal_Round_mD73CF41AB10D501F9DAD3F351007B361017F2801 (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  ___d0, int32_t ___decimals1, const RuntimeMethod* method)
@@ -20745,6 +20769,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D9
 		return L_1;
 	}
 }
+// System.Int64 System.Decimal::op_Explicit(System.Decimal)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t Decimal_op_Explicit_mDDBD21F45B44DFF341935F137EF9B45837303FD5 (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  ___value0, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (Decimal_op_Explicit_mDDBD21F45B44DFF341935F137EF9B45837303FD5_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  L_0 = ___value0;
+		IL2CPP_RUNTIME_CLASS_INIT(Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8_il2cpp_TypeInfo_var);
+		int64_t L_1 = Decimal_ToInt64_mB2D5CC63EDC9C99171ADA933FD133905D7FCCA72(L_0, /*hidden argument*/NULL);
+		return L_1;
+	}
+}
 // System.Single System.Decimal::op_Explicit(System.Decimal)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Decimal_op_Explicit_mC7ED730AE7C6D42F19F06246B242E8B60EDDAC62 (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  ___value0, const RuntimeMethod* method)
 {
@@ -20775,6 +20815,54 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double Decimal_op_Explicit_mB7F34E3B2DFB6211C
 		IL2CPP_RUNTIME_CLASS_INIT(Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8_il2cpp_TypeInfo_var);
 		double L_1 = Decimal_ToDouble_m295040AEA515779CFF906B03F0727DECC27AC000(L_0, /*hidden argument*/NULL);
 		return L_1;
+	}
+}
+// System.Decimal System.Decimal::op_Addition(System.Decimal,System.Decimal)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  Decimal_op_Addition_m9DCE5083B3B1FA372C6F72BD91FABC1FA5B76981 (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  ___d10, Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  ___d21, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (Decimal_op_Addition_m9DCE5083B3B1FA372C6F72BD91FABC1FA5B76981_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		IL2CPP_RUNTIME_CLASS_INIT(Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8_il2cpp_TypeInfo_var);
+		Decimal_FCallAddSub_m43C9BC274869E9F054E0E83FDC03F184ECA4F3BB((Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 *)(&___d10), (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 *)(&___d21), (uint8_t)0, /*hidden argument*/NULL);
+		Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  L_0 = ___d10;
+		return L_0;
+	}
+}
+// System.Decimal System.Decimal::op_Subtraction(System.Decimal,System.Decimal)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  Decimal_op_Subtraction_mA8822FE4BA50620B0A58B46C8B46A08361C7FF4E (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  ___d10, Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  ___d21, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (Decimal_op_Subtraction_mA8822FE4BA50620B0A58B46C8B46A08361C7FF4E_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		IL2CPP_RUNTIME_CLASS_INIT(Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8_il2cpp_TypeInfo_var);
+		Decimal_FCallAddSub_m43C9BC274869E9F054E0E83FDC03F184ECA4F3BB((Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 *)(&___d10), (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 *)(&___d21), (uint8_t)((int32_t)128), /*hidden argument*/NULL);
+		Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  L_0 = ___d10;
+		return L_0;
+	}
+}
+// System.Decimal System.Decimal::op_Multiply(System.Decimal,System.Decimal)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  Decimal_op_Multiply_m115B4FBD28412B58E1911D92A895D7E5C39C2F08 (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  ___d10, Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  ___d21, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (Decimal_op_Multiply_m115B4FBD28412B58E1911D92A895D7E5C39C2F08_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		IL2CPP_RUNTIME_CLASS_INIT(Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8_il2cpp_TypeInfo_var);
+		Decimal_FCallMultiply_mA29A048D19D0893A07EF110176394E462A8DCED7((Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 *)(&___d10), (Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8 *)(&___d21), /*hidden argument*/NULL);
+		Decimal_t44EE9DA309A1BF848308DE4DDFC070CAE6D95EE8  L_0 = ___d10;
+		return L_0;
 	}
 }
 // System.Boolean System.Decimal::op_Equality(System.Decimal,System.Decimal)

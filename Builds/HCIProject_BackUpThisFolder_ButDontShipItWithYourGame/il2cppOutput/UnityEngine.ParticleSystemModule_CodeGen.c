@@ -102,23 +102,23 @@ static Il2CppTokenAdjustorThunkPair s_adjustorThunks[10] =
 };
 static const int32_t s_InvokerIndices[18] = 
 {
-	2211,
-	2212,
+	2250,
+	2251,
 	32,
 	32,
-	2213,
+	2252,
 	6,
 	64,
 	293,
-	1119,
-	1119,
+	1122,
+	1122,
 	293,
 	293,
-	2214,
+	2253,
 	32,
 	293,
-	1119,
-	1119,
+	1122,
+	1122,
 	116,
 };
 extern const Il2CppCodeGenModule g_UnityEngine_ParticleSystemModuleCodeGenModule;

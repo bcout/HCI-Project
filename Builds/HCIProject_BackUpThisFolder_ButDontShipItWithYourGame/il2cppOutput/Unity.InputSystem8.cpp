@@ -318,7 +318,7 @@ struct KeyValuePair_2U5BU5D_t42635E83E08288C2884ACC92904FD5193532E9BD;
 // System.Collections.Generic.LinkedList`1<System.Text.RegularExpressions.CachedCodeEntry>
 struct LinkedList_1_t44CA4EB2162DC04F96F29C8A68A05D05166137F7;
 // System.Collections.Generic.List`1<System.UInt32>
-struct List_1_tD49C9DE2DD9D3B4C15E7898CFBDE6EC98CC30DFE;
+struct List_1_t49B315A213A231954A3718D77EE3A2AFF443C38E;
 // System.Collections.Generic.List`1<UnityEngine.InputSystem.Layouts.InputControlLayout/Collection/LayoutMatcher>
 struct List_1_t5DAD85A41D950E49121172D5FE3E52EB4720E673;
 // System.Collections.Generic.List`1<UnityEngine.InputSystem.LowLevel.InputEventPtr>
@@ -5182,7 +5182,7 @@ public:
 	// System.Collections.Generic.Dictionary`2<System.String,UnityEngine.InputSystem.Layouts.InputControlLayout/ControlItem> UnityEngine.InputSystem.Layouts.InputDeviceBuilder::m_ChildControlOverrides
 	Dictionary_2_t1775CA64E4663263839A48AD3B5A36489361FB0B * ___m_ChildControlOverrides_2;
 	// System.Collections.Generic.List`1<System.UInt32> UnityEngine.InputSystem.Layouts.InputDeviceBuilder::m_StateOffsetToControlMap
-	List_1_tD49C9DE2DD9D3B4C15E7898CFBDE6EC98CC30DFE * ___m_StateOffsetToControlMap_3;
+	List_1_t49B315A213A231954A3718D77EE3A2AFF443C38E * ___m_StateOffsetToControlMap_3;
 	// System.Text.StringBuilder UnityEngine.InputSystem.Layouts.InputDeviceBuilder::m_StringBuilder
 	StringBuilder_t * ___m_StringBuilder_4;
 
@@ -5214,9 +5214,9 @@ public:
 	}
 
 	inline static int32_t get_offset_of_m_StateOffsetToControlMap_3() { return static_cast<int32_t>(offsetof(InputDeviceBuilder_tCBE48CC6BEA6108DB6482216110C8164A5BE55B3, ___m_StateOffsetToControlMap_3)); }
-	inline List_1_tD49C9DE2DD9D3B4C15E7898CFBDE6EC98CC30DFE * get_m_StateOffsetToControlMap_3() const { return ___m_StateOffsetToControlMap_3; }
-	inline List_1_tD49C9DE2DD9D3B4C15E7898CFBDE6EC98CC30DFE ** get_address_of_m_StateOffsetToControlMap_3() { return &___m_StateOffsetToControlMap_3; }
-	inline void set_m_StateOffsetToControlMap_3(List_1_tD49C9DE2DD9D3B4C15E7898CFBDE6EC98CC30DFE * value)
+	inline List_1_t49B315A213A231954A3718D77EE3A2AFF443C38E * get_m_StateOffsetToControlMap_3() const { return ___m_StateOffsetToControlMap_3; }
+	inline List_1_t49B315A213A231954A3718D77EE3A2AFF443C38E ** get_address_of_m_StateOffsetToControlMap_3() { return &___m_StateOffsetToControlMap_3; }
+	inline void set_m_StateOffsetToControlMap_3(List_1_t49B315A213A231954A3718D77EE3A2AFF443C38E * value)
 	{
 		___m_StateOffsetToControlMap_3 = value;
 		Il2CppCodeGenWriteBarrier((void**)(&___m_StateOffsetToControlMap_3), (void*)value);
@@ -5274,7 +5274,7 @@ struct InputDeviceBuilder_tCBE48CC6BEA6108DB6482216110C8164A5BE55B3_marshaled_pi
 	InputDevice_t60DA88B2695D6A26EE313980A622F718AB2172A1 * ___m_Device_0;
 	CacheRefInstance_t41E35A117D366482DCA1E90D37C40FEBA36D3558_marshaled_pinvoke ___m_LayoutCacheRef_1;
 	Dictionary_2_t1775CA64E4663263839A48AD3B5A36489361FB0B * ___m_ChildControlOverrides_2;
-	List_1_tD49C9DE2DD9D3B4C15E7898CFBDE6EC98CC30DFE * ___m_StateOffsetToControlMap_3;
+	List_1_t49B315A213A231954A3718D77EE3A2AFF443C38E * ___m_StateOffsetToControlMap_3;
 	char* ___m_StringBuilder_4;
 };
 // Native definition for COM marshalling of UnityEngine.InputSystem.Layouts.InputDeviceBuilder
@@ -5283,7 +5283,7 @@ struct InputDeviceBuilder_tCBE48CC6BEA6108DB6482216110C8164A5BE55B3_marshaled_co
 	InputDevice_t60DA88B2695D6A26EE313980A622F718AB2172A1 * ___m_Device_0;
 	CacheRefInstance_t41E35A117D366482DCA1E90D37C40FEBA36D3558_marshaled_com ___m_LayoutCacheRef_1;
 	Dictionary_2_t1775CA64E4663263839A48AD3B5A36489361FB0B * ___m_ChildControlOverrides_2;
-	List_1_tD49C9DE2DD9D3B4C15E7898CFBDE6EC98CC30DFE * ___m_StateOffsetToControlMap_3;
+	List_1_t49B315A213A231954A3718D77EE3A2AFF443C38E * ___m_StateOffsetToControlMap_3;
 	Il2CppChar* ___m_StringBuilder_4;
 };
 

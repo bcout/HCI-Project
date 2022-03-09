@@ -160,97 +160,105 @@ extern void TargetSpawner_Update_mBB267639BB55BCE6A03D90648D81B9100300E118 (void
 extern void TargetSpawner_SpawnTarget_mF34912AAD294D34D7D4BCCF3BA72F8F1E24B1E43 (void);
 // 0x00000046 System.Void TargetSpawner::.ctor()
 extern void TargetSpawner__ctor_m4C866CC9E76A99876FFF1718D5B4DCB5FE7A94D4 (void);
-// 0x00000047 System.Void GameInputActions/GameActions::.ctor(GameInputActions)
+// 0x00000047 System.Void MenuController::Start()
+extern void MenuController_Start_m0377779014F00A3FBE313C3BE89091CBDCBF69B5 (void);
+// 0x00000048 System.Void MenuController::Update()
+extern void MenuController_Update_m5C9652645E5A96F9983D8F4E4936E951DEC509F8 (void);
+// 0x00000049 System.Void MenuController::StartGame()
+extern void MenuController_StartGame_m0ADE56D072C5AE968952593449E8FFDDF2A4D49D (void);
+// 0x0000004A System.Void MenuController::.ctor()
+extern void MenuController__ctor_m0A49072B3618F238E83C251C33488007F711316E (void);
+// 0x0000004B System.Void GameInputActions/GameActions::.ctor(GameInputActions)
 extern void GameActions__ctor_mD9EC2797CD12A43EA57E1EA0B8E837A188ACBCE2 (void);
-// 0x00000048 UnityEngine.InputSystem.InputAction GameInputActions/GameActions::get_Quit()
+// 0x0000004C UnityEngine.InputSystem.InputAction GameInputActions/GameActions::get_Quit()
 extern void GameActions_get_Quit_mD0A96CC914E0EE1901E53082B77F4C99822A0B7D (void);
-// 0x00000049 UnityEngine.InputSystem.InputActionMap GameInputActions/GameActions::Get()
+// 0x0000004D UnityEngine.InputSystem.InputActionMap GameInputActions/GameActions::Get()
 extern void GameActions_Get_mB877D6B5B6CF1C94928E49DC95FC4828BE7AF6B5 (void);
-// 0x0000004A System.Void GameInputActions/GameActions::Enable()
+// 0x0000004E System.Void GameInputActions/GameActions::Enable()
 extern void GameActions_Enable_m7EAC9801D4C4852E5D7C93B7FE5AE547D167BEDE (void);
-// 0x0000004B System.Void GameInputActions/GameActions::Disable()
+// 0x0000004F System.Void GameInputActions/GameActions::Disable()
 extern void GameActions_Disable_m64F00F8BE4E279592A45800569376A2D65388144 (void);
-// 0x0000004C System.Boolean GameInputActions/GameActions::get_enabled()
+// 0x00000050 System.Boolean GameInputActions/GameActions::get_enabled()
 extern void GameActions_get_enabled_mF8FBF97EF70A3ED13A39FEE28BD1771BA20A5D4B (void);
-// 0x0000004D UnityEngine.InputSystem.InputActionMap GameInputActions/GameActions::op_Implicit(GameInputActions/GameActions)
+// 0x00000051 UnityEngine.InputSystem.InputActionMap GameInputActions/GameActions::op_Implicit(GameInputActions/GameActions)
 extern void GameActions_op_Implicit_mCB52F7F6B4D82CA5F722970C09BEB34EB0E983FF (void);
-// 0x0000004E System.Void GameInputActions/GameActions::SetCallbacks(GameInputActions/IGameActions)
+// 0x00000052 System.Void GameInputActions/GameActions::SetCallbacks(GameInputActions/IGameActions)
 extern void GameActions_SetCallbacks_m8CDA32056964439B894773906B6F0FC8819CED39 (void);
-// 0x0000004F System.Void GameInputActions/IGameActions::OnQuit(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x00000050 System.Void PlayerInputActions/PlayerActions::.ctor(PlayerInputActions)
+// 0x00000053 System.Void GameInputActions/IGameActions::OnQuit(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000054 System.Void PlayerInputActions/PlayerActions::.ctor(PlayerInputActions)
 extern void PlayerActions__ctor_m532CA8D07955980DF1C74F75D2CCBD13C64B9109 (void);
-// 0x00000051 UnityEngine.InputSystem.InputAction PlayerInputActions/PlayerActions::get_Click()
+// 0x00000055 UnityEngine.InputSystem.InputAction PlayerInputActions/PlayerActions::get_Click()
 extern void PlayerActions_get_Click_mE5024B9EA6927D6BAE941C92926051058298AB7C (void);
-// 0x00000052 UnityEngine.InputSystem.InputActionMap PlayerInputActions/PlayerActions::Get()
+// 0x00000056 UnityEngine.InputSystem.InputActionMap PlayerInputActions/PlayerActions::Get()
 extern void PlayerActions_Get_m6047FFD977B09104BDB5A9F710E9CCF6FB5C63C6 (void);
-// 0x00000053 System.Void PlayerInputActions/PlayerActions::Enable()
+// 0x00000057 System.Void PlayerInputActions/PlayerActions::Enable()
 extern void PlayerActions_Enable_mE7ECBC039D45F9D1E285364C43D7863168617CD5 (void);
-// 0x00000054 System.Void PlayerInputActions/PlayerActions::Disable()
+// 0x00000058 System.Void PlayerInputActions/PlayerActions::Disable()
 extern void PlayerActions_Disable_mA08168B1154A54E279A4430F3857BD333161D534 (void);
-// 0x00000055 System.Boolean PlayerInputActions/PlayerActions::get_enabled()
+// 0x00000059 System.Boolean PlayerInputActions/PlayerActions::get_enabled()
 extern void PlayerActions_get_enabled_m038EC8854FC940FF3349EF7DFB81427D98596620 (void);
-// 0x00000056 UnityEngine.InputSystem.InputActionMap PlayerInputActions/PlayerActions::op_Implicit(PlayerInputActions/PlayerActions)
+// 0x0000005A UnityEngine.InputSystem.InputActionMap PlayerInputActions/PlayerActions::op_Implicit(PlayerInputActions/PlayerActions)
 extern void PlayerActions_op_Implicit_m1D8CFC77F85A12C2160E738BDFD7C37A63BA984F (void);
-// 0x00000057 System.Void PlayerInputActions/PlayerActions::SetCallbacks(PlayerInputActions/IPlayerActions)
+// 0x0000005B System.Void PlayerInputActions/PlayerActions::SetCallbacks(PlayerInputActions/IPlayerActions)
 extern void PlayerActions_SetCallbacks_m46A531C42BE82E7C2AF7A4A4390CEB018AE5ADF0 (void);
-// 0x00000058 System.Void PlayerInputActions/UIActions::.ctor(PlayerInputActions)
+// 0x0000005C System.Void PlayerInputActions/UIActions::.ctor(PlayerInputActions)
 extern void UIActions__ctor_mB2A8BBDC494816BB1A772783F28230929281FC5C (void);
-// 0x00000059 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_Navigate()
+// 0x0000005D UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_Navigate()
 extern void UIActions_get_Navigate_m40A72BC7925953B08B9C7D6E2EDEB257F8FB9469 (void);
-// 0x0000005A UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_Submit()
+// 0x0000005E UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_Submit()
 extern void UIActions_get_Submit_mE3DAA204ABA5DB9755318B20DEF34A44A969EC0F (void);
-// 0x0000005B UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_Cancel()
+// 0x0000005F UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_Cancel()
 extern void UIActions_get_Cancel_m50FB956F3265BD04579D597FF4D5115F6021DBD0 (void);
-// 0x0000005C UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_Point()
+// 0x00000060 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_Point()
 extern void UIActions_get_Point_mB926426F6F95C37BDB4B4DF9417227FC604F1089 (void);
-// 0x0000005D UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_Click()
+// 0x00000061 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_Click()
 extern void UIActions_get_Click_m826E454D20F9834138F4EF81A43A9F72C972A3E9 (void);
-// 0x0000005E UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_ScrollWheel()
+// 0x00000062 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_ScrollWheel()
 extern void UIActions_get_ScrollWheel_mFE91472E61E95E24E95B2DF2A1569BCC2EEE8A8C (void);
-// 0x0000005F UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_MiddleClick()
+// 0x00000063 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_MiddleClick()
 extern void UIActions_get_MiddleClick_m240442D27F0EB4AE4D2F244E64E4DB121CB9B3FE (void);
-// 0x00000060 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_RightClick()
+// 0x00000064 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_RightClick()
 extern void UIActions_get_RightClick_m4C8166B35AC5BD49EB49A98807E84B6C69AC1884 (void);
-// 0x00000061 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_TrackedDevicePosition()
+// 0x00000065 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_TrackedDevicePosition()
 extern void UIActions_get_TrackedDevicePosition_mAD4C53811D2F8C63E3ECB618FFE5ED2923FD8544 (void);
-// 0x00000062 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_TrackedDeviceOrientation()
+// 0x00000066 UnityEngine.InputSystem.InputAction PlayerInputActions/UIActions::get_TrackedDeviceOrientation()
 extern void UIActions_get_TrackedDeviceOrientation_mED2370B47D3201344E4DDCC5AA95CA3B7CE609FD (void);
-// 0x00000063 UnityEngine.InputSystem.InputActionMap PlayerInputActions/UIActions::Get()
+// 0x00000067 UnityEngine.InputSystem.InputActionMap PlayerInputActions/UIActions::Get()
 extern void UIActions_Get_m4AF9C84234E35614FCFB305E81542EFD5BA7E0B4 (void);
-// 0x00000064 System.Void PlayerInputActions/UIActions::Enable()
+// 0x00000068 System.Void PlayerInputActions/UIActions::Enable()
 extern void UIActions_Enable_m063517D6A71273693B3A1DBA4AE84B8919E1FA03 (void);
-// 0x00000065 System.Void PlayerInputActions/UIActions::Disable()
+// 0x00000069 System.Void PlayerInputActions/UIActions::Disable()
 extern void UIActions_Disable_m1777F66941C5EF2E4B8EA04278BB81D123AC1A62 (void);
-// 0x00000066 System.Boolean PlayerInputActions/UIActions::get_enabled()
+// 0x0000006A System.Boolean PlayerInputActions/UIActions::get_enabled()
 extern void UIActions_get_enabled_mF4B204BA79FD33EC78E47592ED41C20AB3B80746 (void);
-// 0x00000067 UnityEngine.InputSystem.InputActionMap PlayerInputActions/UIActions::op_Implicit(PlayerInputActions/UIActions)
+// 0x0000006B UnityEngine.InputSystem.InputActionMap PlayerInputActions/UIActions::op_Implicit(PlayerInputActions/UIActions)
 extern void UIActions_op_Implicit_m81DB3A99456573C4545A56471106E9E8B1CDC27D (void);
-// 0x00000068 System.Void PlayerInputActions/UIActions::SetCallbacks(PlayerInputActions/IUIActions)
+// 0x0000006C System.Void PlayerInputActions/UIActions::SetCallbacks(PlayerInputActions/IUIActions)
 extern void UIActions_SetCallbacks_mEB5F0EFD6B2A67A9A481D311FB0BAAC70305CA21 (void);
-// 0x00000069 System.Void PlayerInputActions/IPlayerActions::OnClick(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x0000006A System.Void PlayerInputActions/IUIActions::OnNavigate(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x0000006B System.Void PlayerInputActions/IUIActions::OnSubmit(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x0000006C System.Void PlayerInputActions/IUIActions::OnCancel(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x0000006D System.Void PlayerInputActions/IUIActions::OnPoint(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x0000006E System.Void PlayerInputActions/IUIActions::OnClick(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x0000006F System.Void PlayerInputActions/IUIActions::OnScrollWheel(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x00000070 System.Void PlayerInputActions/IUIActions::OnMiddleClick(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x00000071 System.Void PlayerInputActions/IUIActions::OnRightClick(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x00000072 System.Void PlayerInputActions/IUIActions::OnTrackedDevicePosition(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x00000073 System.Void PlayerInputActions/IUIActions::OnTrackedDeviceOrientation(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x00000074 System.Void TargetSpawner/<SpawnTarget>d__6::.ctor(System.Int32)
+// 0x0000006D System.Void PlayerInputActions/IPlayerActions::OnClick(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x0000006E System.Void PlayerInputActions/IUIActions::OnNavigate(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x0000006F System.Void PlayerInputActions/IUIActions::OnSubmit(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000070 System.Void PlayerInputActions/IUIActions::OnCancel(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000071 System.Void PlayerInputActions/IUIActions::OnPoint(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000072 System.Void PlayerInputActions/IUIActions::OnClick(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000073 System.Void PlayerInputActions/IUIActions::OnScrollWheel(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000074 System.Void PlayerInputActions/IUIActions::OnMiddleClick(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000075 System.Void PlayerInputActions/IUIActions::OnRightClick(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000076 System.Void PlayerInputActions/IUIActions::OnTrackedDevicePosition(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000077 System.Void PlayerInputActions/IUIActions::OnTrackedDeviceOrientation(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x00000078 System.Void TargetSpawner/<SpawnTarget>d__6::.ctor(System.Int32)
 extern void U3CSpawnTargetU3Ed__6__ctor_mAC3D4E7701FF9125874609EA0C8759A4FFC2A020 (void);
-// 0x00000075 System.Void TargetSpawner/<SpawnTarget>d__6::System.IDisposable.Dispose()
+// 0x00000079 System.Void TargetSpawner/<SpawnTarget>d__6::System.IDisposable.Dispose()
 extern void U3CSpawnTargetU3Ed__6_System_IDisposable_Dispose_m28B42F69861972EDDD208028E5094F553F3BF028 (void);
-// 0x00000076 System.Boolean TargetSpawner/<SpawnTarget>d__6::MoveNext()
+// 0x0000007A System.Boolean TargetSpawner/<SpawnTarget>d__6::MoveNext()
 extern void U3CSpawnTargetU3Ed__6_MoveNext_m17568D4F0CC582EED01A75F951D7FA122383071D (void);
-// 0x00000077 System.Object TargetSpawner/<SpawnTarget>d__6::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x0000007B System.Object TargetSpawner/<SpawnTarget>d__6::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CSpawnTargetU3Ed__6_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m2EF4A111DC3D2CA0527C6B29FDA2A9A81B67CF82 (void);
-// 0x00000078 System.Void TargetSpawner/<SpawnTarget>d__6::System.Collections.IEnumerator.Reset()
+// 0x0000007C System.Void TargetSpawner/<SpawnTarget>d__6::System.Collections.IEnumerator.Reset()
 extern void U3CSpawnTargetU3Ed__6_System_Collections_IEnumerator_Reset_mBE23FD4595494B4C94E0457F38EEF9D855C96ED0 (void);
-// 0x00000079 System.Object TargetSpawner/<SpawnTarget>d__6::System.Collections.IEnumerator.get_Current()
+// 0x0000007D System.Object TargetSpawner/<SpawnTarget>d__6::System.Collections.IEnumerator.get_Current()
 extern void U3CSpawnTargetU3Ed__6_System_Collections_IEnumerator_get_Current_m87B5D2FB4A15DB1772F6C291B415C169C4A1D47C (void);
-static Il2CppMethodPointer s_methodPointers[121] = 
+static Il2CppMethodPointer s_methodPointers[125] = 
 {
 	GameInputActions_get_asset_mA010A6F37FABF99F81724E42F4C1BFB7DBE56A9F,
 	GameInputActions__ctor_m5F40FBC398090D926AE71D6FE0932B8E2E8E390D,
@@ -322,6 +330,10 @@ static Il2CppMethodPointer s_methodPointers[121] =
 	TargetSpawner_Update_mBB267639BB55BCE6A03D90648D81B9100300E118,
 	TargetSpawner_SpawnTarget_mF34912AAD294D34D7D4BCCF3BA72F8F1E24B1E43,
 	TargetSpawner__ctor_m4C866CC9E76A99876FFF1718D5B4DCB5FE7A94D4,
+	MenuController_Start_m0377779014F00A3FBE313C3BE89091CBDCBF69B5,
+	MenuController_Update_m5C9652645E5A96F9983D8F4E4936E951DEC509F8,
+	MenuController_StartGame_m0ADE56D072C5AE968952593449E8FFDDF2A4D49D,
+	MenuController__ctor_m0A49072B3618F238E83C251C33488007F711316E,
 	GameActions__ctor_mD9EC2797CD12A43EA57E1EA0B8E837A188ACBCE2,
 	GameActions_get_Quit_mD0A96CC914E0EE1901E53082B77F4C99822A0B7D,
 	GameActions_Get_mB877D6B5B6CF1C94928E49DC95FC4828BE7AF6B5,
@@ -406,47 +418,47 @@ extern void UIActions_get_enabled_mF4B204BA79FD33EC78E47592ED41C20AB3B80746_Adju
 extern void UIActions_SetCallbacks_mEB5F0EFD6B2A67A9A481D311FB0BAAC70305CA21_AdjustorThunk (void);
 static Il2CppTokenAdjustorThunkPair s_adjustorThunks[30] = 
 {
-	{ 0x06000047, GameActions__ctor_mD9EC2797CD12A43EA57E1EA0B8E837A188ACBCE2_AdjustorThunk },
-	{ 0x06000048, GameActions_get_Quit_mD0A96CC914E0EE1901E53082B77F4C99822A0B7D_AdjustorThunk },
-	{ 0x06000049, GameActions_Get_mB877D6B5B6CF1C94928E49DC95FC4828BE7AF6B5_AdjustorThunk },
-	{ 0x0600004A, GameActions_Enable_m7EAC9801D4C4852E5D7C93B7FE5AE547D167BEDE_AdjustorThunk },
-	{ 0x0600004B, GameActions_Disable_m64F00F8BE4E279592A45800569376A2D65388144_AdjustorThunk },
-	{ 0x0600004C, GameActions_get_enabled_mF8FBF97EF70A3ED13A39FEE28BD1771BA20A5D4B_AdjustorThunk },
-	{ 0x0600004E, GameActions_SetCallbacks_m8CDA32056964439B894773906B6F0FC8819CED39_AdjustorThunk },
-	{ 0x06000050, PlayerActions__ctor_m532CA8D07955980DF1C74F75D2CCBD13C64B9109_AdjustorThunk },
-	{ 0x06000051, PlayerActions_get_Click_mE5024B9EA6927D6BAE941C92926051058298AB7C_AdjustorThunk },
-	{ 0x06000052, PlayerActions_Get_m6047FFD977B09104BDB5A9F710E9CCF6FB5C63C6_AdjustorThunk },
-	{ 0x06000053, PlayerActions_Enable_mE7ECBC039D45F9D1E285364C43D7863168617CD5_AdjustorThunk },
-	{ 0x06000054, PlayerActions_Disable_mA08168B1154A54E279A4430F3857BD333161D534_AdjustorThunk },
-	{ 0x06000055, PlayerActions_get_enabled_m038EC8854FC940FF3349EF7DFB81427D98596620_AdjustorThunk },
-	{ 0x06000057, PlayerActions_SetCallbacks_m46A531C42BE82E7C2AF7A4A4390CEB018AE5ADF0_AdjustorThunk },
-	{ 0x06000058, UIActions__ctor_mB2A8BBDC494816BB1A772783F28230929281FC5C_AdjustorThunk },
-	{ 0x06000059, UIActions_get_Navigate_m40A72BC7925953B08B9C7D6E2EDEB257F8FB9469_AdjustorThunk },
-	{ 0x0600005A, UIActions_get_Submit_mE3DAA204ABA5DB9755318B20DEF34A44A969EC0F_AdjustorThunk },
-	{ 0x0600005B, UIActions_get_Cancel_m50FB956F3265BD04579D597FF4D5115F6021DBD0_AdjustorThunk },
-	{ 0x0600005C, UIActions_get_Point_mB926426F6F95C37BDB4B4DF9417227FC604F1089_AdjustorThunk },
-	{ 0x0600005D, UIActions_get_Click_m826E454D20F9834138F4EF81A43A9F72C972A3E9_AdjustorThunk },
-	{ 0x0600005E, UIActions_get_ScrollWheel_mFE91472E61E95E24E95B2DF2A1569BCC2EEE8A8C_AdjustorThunk },
-	{ 0x0600005F, UIActions_get_MiddleClick_m240442D27F0EB4AE4D2F244E64E4DB121CB9B3FE_AdjustorThunk },
-	{ 0x06000060, UIActions_get_RightClick_m4C8166B35AC5BD49EB49A98807E84B6C69AC1884_AdjustorThunk },
-	{ 0x06000061, UIActions_get_TrackedDevicePosition_mAD4C53811D2F8C63E3ECB618FFE5ED2923FD8544_AdjustorThunk },
-	{ 0x06000062, UIActions_get_TrackedDeviceOrientation_mED2370B47D3201344E4DDCC5AA95CA3B7CE609FD_AdjustorThunk },
-	{ 0x06000063, UIActions_Get_m4AF9C84234E35614FCFB305E81542EFD5BA7E0B4_AdjustorThunk },
-	{ 0x06000064, UIActions_Enable_m063517D6A71273693B3A1DBA4AE84B8919E1FA03_AdjustorThunk },
-	{ 0x06000065, UIActions_Disable_m1777F66941C5EF2E4B8EA04278BB81D123AC1A62_AdjustorThunk },
-	{ 0x06000066, UIActions_get_enabled_mF4B204BA79FD33EC78E47592ED41C20AB3B80746_AdjustorThunk },
-	{ 0x06000068, UIActions_SetCallbacks_mEB5F0EFD6B2A67A9A481D311FB0BAAC70305CA21_AdjustorThunk },
+	{ 0x0600004B, GameActions__ctor_mD9EC2797CD12A43EA57E1EA0B8E837A188ACBCE2_AdjustorThunk },
+	{ 0x0600004C, GameActions_get_Quit_mD0A96CC914E0EE1901E53082B77F4C99822A0B7D_AdjustorThunk },
+	{ 0x0600004D, GameActions_Get_mB877D6B5B6CF1C94928E49DC95FC4828BE7AF6B5_AdjustorThunk },
+	{ 0x0600004E, GameActions_Enable_m7EAC9801D4C4852E5D7C93B7FE5AE547D167BEDE_AdjustorThunk },
+	{ 0x0600004F, GameActions_Disable_m64F00F8BE4E279592A45800569376A2D65388144_AdjustorThunk },
+	{ 0x06000050, GameActions_get_enabled_mF8FBF97EF70A3ED13A39FEE28BD1771BA20A5D4B_AdjustorThunk },
+	{ 0x06000052, GameActions_SetCallbacks_m8CDA32056964439B894773906B6F0FC8819CED39_AdjustorThunk },
+	{ 0x06000054, PlayerActions__ctor_m532CA8D07955980DF1C74F75D2CCBD13C64B9109_AdjustorThunk },
+	{ 0x06000055, PlayerActions_get_Click_mE5024B9EA6927D6BAE941C92926051058298AB7C_AdjustorThunk },
+	{ 0x06000056, PlayerActions_Get_m6047FFD977B09104BDB5A9F710E9CCF6FB5C63C6_AdjustorThunk },
+	{ 0x06000057, PlayerActions_Enable_mE7ECBC039D45F9D1E285364C43D7863168617CD5_AdjustorThunk },
+	{ 0x06000058, PlayerActions_Disable_mA08168B1154A54E279A4430F3857BD333161D534_AdjustorThunk },
+	{ 0x06000059, PlayerActions_get_enabled_m038EC8854FC940FF3349EF7DFB81427D98596620_AdjustorThunk },
+	{ 0x0600005B, PlayerActions_SetCallbacks_m46A531C42BE82E7C2AF7A4A4390CEB018AE5ADF0_AdjustorThunk },
+	{ 0x0600005C, UIActions__ctor_mB2A8BBDC494816BB1A772783F28230929281FC5C_AdjustorThunk },
+	{ 0x0600005D, UIActions_get_Navigate_m40A72BC7925953B08B9C7D6E2EDEB257F8FB9469_AdjustorThunk },
+	{ 0x0600005E, UIActions_get_Submit_mE3DAA204ABA5DB9755318B20DEF34A44A969EC0F_AdjustorThunk },
+	{ 0x0600005F, UIActions_get_Cancel_m50FB956F3265BD04579D597FF4D5115F6021DBD0_AdjustorThunk },
+	{ 0x06000060, UIActions_get_Point_mB926426F6F95C37BDB4B4DF9417227FC604F1089_AdjustorThunk },
+	{ 0x06000061, UIActions_get_Click_m826E454D20F9834138F4EF81A43A9F72C972A3E9_AdjustorThunk },
+	{ 0x06000062, UIActions_get_ScrollWheel_mFE91472E61E95E24E95B2DF2A1569BCC2EEE8A8C_AdjustorThunk },
+	{ 0x06000063, UIActions_get_MiddleClick_m240442D27F0EB4AE4D2F244E64E4DB121CB9B3FE_AdjustorThunk },
+	{ 0x06000064, UIActions_get_RightClick_m4C8166B35AC5BD49EB49A98807E84B6C69AC1884_AdjustorThunk },
+	{ 0x06000065, UIActions_get_TrackedDevicePosition_mAD4C53811D2F8C63E3ECB618FFE5ED2923FD8544_AdjustorThunk },
+	{ 0x06000066, UIActions_get_TrackedDeviceOrientation_mED2370B47D3201344E4DDCC5AA95CA3B7CE609FD_AdjustorThunk },
+	{ 0x06000067, UIActions_Get_m4AF9C84234E35614FCFB305E81542EFD5BA7E0B4_AdjustorThunk },
+	{ 0x06000068, UIActions_Enable_m063517D6A71273693B3A1DBA4AE84B8919E1FA03_AdjustorThunk },
+	{ 0x06000069, UIActions_Disable_m1777F66941C5EF2E4B8EA04278BB81D123AC1A62_AdjustorThunk },
+	{ 0x0600006A, UIActions_get_enabled_mF4B204BA79FD33EC78E47592ED41C20AB3B80746_AdjustorThunk },
+	{ 0x0600006C, UIActions_SetCallbacks_mEB5F0EFD6B2A67A9A481D311FB0BAAC70305CA21_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[121] = 
+static const int32_t s_InvokerIndices[125] = 
 {
 	14,
 	23,
 	23,
-	1626,
-	1627,
-	1628,
-	1629,
-	1630,
+	1665,
+	1666,
+	1667,
+	1668,
+	1669,
 	9,
 	14,
 	14,
@@ -454,16 +466,16 @@ static const int32_t s_InvokerIndices[121] =
 	23,
 	14,
 	112,
-	1631,
-	2239,
+	1670,
+	2384,
 	14,
 	23,
 	23,
-	1626,
-	1627,
-	1628,
-	1629,
-	1630,
+	1665,
+	1666,
+	1667,
+	1668,
+	1669,
 	9,
 	14,
 	14,
@@ -471,33 +483,33 @@ static const int32_t s_InvokerIndices[121] =
 	23,
 	14,
 	112,
-	1631,
-	2241,
-	2242,
-	1686,
-	1686,
-	1686,
-	1686,
-	1686,
+	1670,
+	2386,
+	2387,
+	1725,
+	1725,
+	1725,
+	1725,
+	1725,
 	49,
-	803,
-	1140,
-	1467,
-	1140,
-	1467,
-	1140,
-	1467,
-	1140,
-	1467,
+	805,
+	1143,
+	1506,
+	1143,
+	1506,
+	1143,
+	1506,
+	1143,
+	1506,
 	3,
 	23,
-	1843,
+	1882,
 	23,
 	23,
 	23,
 	23,
 	23,
-	1843,
+	1882,
 	23,
 	23,
 	23,
@@ -508,6 +520,10 @@ static const int32_t s_InvokerIndices[121] =
 	23,
 	23,
 	14,
+	23,
+	23,
+	23,
+	23,
 	23,
 	26,
 	14,
@@ -515,16 +531,16 @@ static const int32_t s_InvokerIndices[121] =
 	23,
 	23,
 	114,
-	2240,
+	2385,
 	26,
-	1843,
+	1882,
 	26,
 	14,
 	14,
 	23,
 	23,
 	114,
-	2243,
+	2388,
 	26,
 	26,
 	14,
@@ -541,19 +557,19 @@ static const int32_t s_InvokerIndices[121] =
 	23,
 	23,
 	114,
-	2244,
+	2389,
 	26,
-	1843,
-	1843,
-	1843,
-	1843,
-	1843,
-	1843,
-	1843,
-	1843,
-	1843,
-	1843,
-	1843,
+	1882,
+	1882,
+	1882,
+	1882,
+	1882,
+	1882,
+	1882,
+	1882,
+	1882,
+	1882,
+	1882,
 	32,
 	23,
 	114,
@@ -565,7 +581,7 @@ extern const Il2CppCodeGenModule g_AssemblyU2DCSharpCodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharpCodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	121,
+	125,
 	s_methodPointers,
 	30,
 	s_adjustorThunks,
