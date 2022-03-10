@@ -17,6 +17,8 @@ public static class GameData
     public static int current_round { get; set; }
     public static int MAX_ROUNDS { get; }
     public static float TIME_LIMIT { get; }
+    public static int[] scores { get; set; }
+    public static string username { get; set; }
 
     static GameData()
     {
@@ -32,5 +34,7 @@ public static class GameData
         current_round = 0;
         MAX_ROUNDS = 5;
         TIME_LIMIT = 30;
+
+        scores = new int[MAX_ROUNDS];
     }
 }

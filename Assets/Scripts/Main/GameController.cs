@@ -62,7 +62,17 @@ public class GameController : MonoBehaviour
 
         if (GameData.game_state == GameData.state.DONE)
         {
-            SceneManager.LoadScene("Menu");
+            GameData.scores[GameData.current_round - 1] = GameData.player_score;
+            GameData.player_score = 0;
+
+            if (GameData.current_round >= GameData.MAX_ROUNDS)
+            {
+                SceneManager.LoadScene("End");
+            }
+            else
+            {
+                SceneManager.LoadScene("BetweenRounds");
+            }
         }
 
         text_controller.UpdateHUD(time_left);

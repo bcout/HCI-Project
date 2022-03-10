@@ -21953,7 +21953,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2_set_Item_mEA07C9AE7BBAF67BC
 // System.Void System.Array::Resize<TMPro.MaterialReference>(!!0[]&,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_Resize_TisMaterialReference_tFDD866CC1D210125CDEC9DCB60B9AACB2FE3AF7F_mEC0F048673EB071EF8310B9493C9AEC791F80E0C_gshared (MaterialReferenceU5BU5D_t01EC9C1C00A504C2EF9FBAF95DE26BB88E9B743B** ___array0, int32_t ___newSize1, const RuntimeMethod* method);
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,System.Object>::ContainsKey(!0)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Dictionary_2_ContainsKey_mBF5574232A8F79C279DFD71FFBFF85B4E2B6312D_gshared (Dictionary_2_t03608389BB57475AA3F4B2B79D176A27807BC884 * __this, int32_t ___key0, const RuntimeMethod* method);
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Dictionary_2_ContainsKey_mDA40BF5B34B9FC13EC60102D92D1C35B30BBD60C_gshared (Dictionary_2_t03608389BB57475AA3F4B2B79D176A27807BC884 * __this, int32_t ___key0, const RuntimeMethod* method);
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,System.Object>::Add(!0,!1)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2_Add_mF7AEA0EFA07EEBC1A4B283A26A7CB720EE7A4C20_gshared (Dictionary_2_t03608389BB57475AA3F4B2B79D176A27807BC884 * __this, int32_t ___key0, RuntimeObject * ___value1, const RuntimeMethod* method);
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,System.Object>::TryGetValue(!0,!1&)
@@ -22388,7 +22388,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MaterialReferenceManager_AddFontAssetInt
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,TMPro.TMP_FontAsset>::ContainsKey(!0)
 inline bool Dictionary_2_ContainsKey_m123420C325FF4FFCD2A01F4205B28F968204F454 (Dictionary_2_t5027D1A6C399063D7319CDF3347CBDF7F5E660CA * __this, int32_t ___key0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Dictionary_2_t5027D1A6C399063D7319CDF3347CBDF7F5E660CA *, int32_t, const RuntimeMethod*))Dictionary_2_ContainsKey_mBF5574232A8F79C279DFD71FFBFF85B4E2B6312D_gshared)(__this, ___key0, method);
+	return ((  bool (*) (Dictionary_2_t5027D1A6C399063D7319CDF3347CBDF7F5E660CA *, int32_t, const RuntimeMethod*))Dictionary_2_ContainsKey_mDA40BF5B34B9FC13EC60102D92D1C35B30BBD60C_gshared)(__this, ___key0, method);
 }
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,TMPro.TMP_FontAsset>::Add(!0,!1)
 inline void Dictionary_2_Add_mC0E29F00E3EE7401BFFFAECD2881BEA9DAADB860 (Dictionary_2_t5027D1A6C399063D7319CDF3347CBDF7F5E660CA * __this, int32_t ___key0, TMP_FontAsset_t44D2006105B39FB33AE5A0ADF07A7EF36C72385C * ___value1, const RuntimeMethod* method)
@@ -22405,7 +22405,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MaterialReferenceManager_AddSpriteAssetI
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,TMPro.TMP_SpriteAsset>::ContainsKey(!0)
 inline bool Dictionary_2_ContainsKey_mA4E438457BD99AE3EC2FF6487772FCB02DBB2B52 (Dictionary_2_t4EB591B9FEEC3EFCF9551F1834394DC59DFECDEC * __this, int32_t ___key0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Dictionary_2_t4EB591B9FEEC3EFCF9551F1834394DC59DFECDEC *, int32_t, const RuntimeMethod*))Dictionary_2_ContainsKey_mBF5574232A8F79C279DFD71FFBFF85B4E2B6312D_gshared)(__this, ___key0, method);
+	return ((  bool (*) (Dictionary_2_t4EB591B9FEEC3EFCF9551F1834394DC59DFECDEC *, int32_t, const RuntimeMethod*))Dictionary_2_ContainsKey_mDA40BF5B34B9FC13EC60102D92D1C35B30BBD60C_gshared)(__this, ___key0, method);
 }
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,TMPro.TMP_SpriteAsset>::Add(!0,!1)
 inline void Dictionary_2_Add_m9B5F4322FFF690E411C6EFF7080887C37F68BEA7 (Dictionary_2_t4EB591B9FEEC3EFCF9551F1834394DC59DFECDEC * __this, int32_t ___key0, TMP_SpriteAsset_tF896FFED2AA9395D6BC40FFEAC6DE7555A27A487 * ___value1, const RuntimeMethod* method)
@@ -22421,7 +22421,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MaterialReferenceManager_AddColorGradien
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,TMPro.TMP_ColorGradient>::ContainsKey(!0)
 inline bool Dictionary_2_ContainsKey_m34FADA117D5D56BECE0606218FC7DC02BD306A07 (Dictionary_2_t3D8062B54231EF452E0BDF087D00AE161A359E80 * __this, int32_t ___key0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Dictionary_2_t3D8062B54231EF452E0BDF087D00AE161A359E80 *, int32_t, const RuntimeMethod*))Dictionary_2_ContainsKey_mBF5574232A8F79C279DFD71FFBFF85B4E2B6312D_gshared)(__this, ___key0, method);
+	return ((  bool (*) (Dictionary_2_t3D8062B54231EF452E0BDF087D00AE161A359E80 *, int32_t, const RuntimeMethod*))Dictionary_2_ContainsKey_mDA40BF5B34B9FC13EC60102D92D1C35B30BBD60C_gshared)(__this, ___key0, method);
 }
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,TMPro.TMP_ColorGradient>::Add(!0,!1)
 inline void Dictionary_2_Add_mF6603A4089D73DE05B1FD4379B00DE24DF2C7A01 (Dictionary_2_t3D8062B54231EF452E0BDF087D00AE161A359E80 * __this, int32_t ___key0, TMP_ColorGradient_tEA29C4736B1786301A803B6C0FB30107A10D79B7 * ___value1, const RuntimeMethod* method)

@@ -18784,7 +18784,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dictionary_2__ctor_m7D745ADE56151C289545
 // !!0 UnityEngine.Resources::Load<System.Object>(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject * Resources_Load_TisRuntimeObject_m312D167000593C478994C1F4C93930C5DAED66D3_gshared (String_t* ___path0, const RuntimeMethod* method);
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,System.Object>::ContainsKey(!0)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Dictionary_2_ContainsKey_mBF5574232A8F79C279DFD71FFBFF85B4E2B6312D_gshared (Dictionary_2_t03608389BB57475AA3F4B2B79D176A27807BC884 * __this, int32_t ___key0, const RuntimeMethod* method);
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Dictionary_2_ContainsKey_mDA40BF5B34B9FC13EC60102D92D1C35B30BBD60C_gshared (Dictionary_2_t03608389BB57475AA3F4B2B79D176A27807BC884 * __this, int32_t ___key0, const RuntimeMethod* method);
 // System.Void System.Collections.Generic.List`1<System.Object>::Add(!0)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void List_1_Add_m6930161974C7504C80F52EC379EF012387D43138_gshared (List_1_t05CC3C859AB5E6024394EF9A42E3E696628CA02D * __this, RuntimeObject * ___item0, const RuntimeMethod* method);
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,System.Object>::Add(!0,!1)
@@ -19012,7 +19012,7 @@ inline TMP_Settings_t1CCF2DFCF66223CC1AC404F9AEE3E257BA37255A * Resources_Load_T
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,TMPro.TMP_FontAsset>::ContainsKey(!0)
 inline bool Dictionary_2_ContainsKey_m123420C325FF4FFCD2A01F4205B28F968204F454 (Dictionary_2_t5027D1A6C399063D7319CDF3347CBDF7F5E660CA * __this, int32_t ___key0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Dictionary_2_t5027D1A6C399063D7319CDF3347CBDF7F5E660CA *, int32_t, const RuntimeMethod*))Dictionary_2_ContainsKey_mBF5574232A8F79C279DFD71FFBFF85B4E2B6312D_gshared)(__this, ___key0, method);
+	return ((  bool (*) (Dictionary_2_t5027D1A6C399063D7319CDF3347CBDF7F5E660CA *, int32_t, const RuntimeMethod*))Dictionary_2_ContainsKey_mDA40BF5B34B9FC13EC60102D92D1C35B30BBD60C_gshared)(__this, ___key0, method);
 }
 // System.Void System.Collections.Generic.List`1<TMPro.TMP_FontAsset>::Add(!0)
 inline void List_1_Add_m04B12F8615A4A4C5DF23041E6BE8C1FB30E0C043 (List_1_tAFAA4C916321DE9AA66ADE0817825F91176F7B1F * __this, TMP_FontAsset_t44D2006105B39FB33AE5A0ADF07A7EF36C72385C * ___item0, const RuntimeMethod* method)
@@ -19522,7 +19522,7 @@ IL2CPP_EXTERN_C inline  IL2CPP_METHOD_ATTR int32_t TMP_Style_get_hashCode_mD8555
 // System.Boolean System.Collections.Generic.Dictionary`2<System.Int32,TMPro.TMP_Style>::ContainsKey(!0)
 inline bool Dictionary_2_ContainsKey_mAD3579388571E44B78561EA372F140CD6A68A47B (Dictionary_2_t00BE7C96940D99992E2BD12503120721610579B6 * __this, int32_t ___key0, const RuntimeMethod* method)
 {
-	return ((  bool (*) (Dictionary_2_t00BE7C96940D99992E2BD12503120721610579B6 *, int32_t, const RuntimeMethod*))Dictionary_2_ContainsKey_mBF5574232A8F79C279DFD71FFBFF85B4E2B6312D_gshared)(__this, ___key0, method);
+	return ((  bool (*) (Dictionary_2_t00BE7C96940D99992E2BD12503120721610579B6 *, int32_t, const RuntimeMethod*))Dictionary_2_ContainsKey_mDA40BF5B34B9FC13EC60102D92D1C35B30BBD60C_gshared)(__this, ___key0, method);
 }
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,TMPro.TMP_Style>::Add(!0,!1)
 inline void Dictionary_2_Add_mE4F7F213173082B958C0A53A28B90C39609B4F01 (Dictionary_2_t00BE7C96940D99992E2BD12503120721610579B6 * __this, int32_t ___key0, TMP_Style_t9FD01084B9E3F1D4B92E87114C454C98BA20FBAD * ___value1, const RuntimeMethod* method)

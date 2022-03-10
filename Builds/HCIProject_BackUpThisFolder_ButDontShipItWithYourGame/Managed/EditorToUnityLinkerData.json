@@ -7,8 +7,10 @@
             "fullManagedTypeName": "UnityEngine.Object",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -17,8 +19,10 @@
             "fullManagedTypeName": "",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -27,8 +31,10 @@
             "fullManagedTypeName": "",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -37,8 +43,10 @@
             "fullManagedTypeName": "UnityEngine.Behaviour",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -47,8 +55,10 @@
             "fullManagedTypeName": "UnityEngine.Component",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -57,8 +67,10 @@
             "fullManagedTypeName": "UnityEngine.MonoBehaviour",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -67,8 +79,10 @@
             "fullManagedTypeName": "UnityEditor.MonoScript",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -77,8 +91,10 @@
             "fullManagedTypeName": "UnityEngine.Material",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -101,8 +117,10 @@
             "fullManagedTypeName": "",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -118,8 +136,10 @@
             "fullManagedTypeName": "UnityEngine.Shader",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -149,8 +169,10 @@
             "fullManagedTypeName": "UnityEngine.TextAsset",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -250,8 +272,10 @@
             "fullManagedTypeName": "UnityEngine.Transform",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -260,8 +284,10 @@
             "fullManagedTypeName": "UnityEngine.Camera",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -270,8 +296,10 @@
             "fullManagedTypeName": "UnityEngine.AudioBehaviour",
             "moduleName": "Audio",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -280,8 +308,10 @@
             "fullManagedTypeName": "UnityEngine.AudioListener",
             "moduleName": "Audio",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -290,8 +320,10 @@
             "fullManagedTypeName": "UnityEngine.Texture",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -300,8 +332,10 @@
             "fullManagedTypeName": "UnityEngine.Canvas",
             "moduleName": "UI",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -310,8 +344,10 @@
             "fullManagedTypeName": "UnityEngine.RectTransform",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -320,8 +356,10 @@
             "fullManagedTypeName": "UnityEngine.GameObject",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -330,8 +368,10 @@
             "fullManagedTypeName": "UnityEngine.LightmapSettings",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -340,7 +380,10 @@
             "fullManagedTypeName": "UnityEngine.Font",
             "moduleName": "TextRendering",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -349,8 +392,10 @@
             "fullManagedTypeName": "UnityEngine.Texture2D",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -359,8 +404,10 @@
             "fullManagedTypeName": "UnityEngine.Sprite",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -369,8 +416,10 @@
             "fullManagedTypeName": "UnityEngine.CanvasRenderer",
             "moduleName": "UI",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -379,8 +428,10 @@
             "fullManagedTypeName": "UnityEngine.RenderSettings",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -389,8 +440,10 @@
             "fullManagedTypeName": "",
             "moduleName": "AI",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -399,8 +452,10 @@
             "fullManagedTypeName": "",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/Menu.unity",
-                "Assets/Scenes/Main.unity"
+                "Assets/Scenes/Start.unity",
+                "Assets/Scenes/Main.unity",
+                "Assets/Scenes/BetweenRounds.unity",
+                "Assets/Scenes/End.unity"
             ]
         },
         {
@@ -442,6 +497,13 @@
         {
             "managedAssemblyName": "Assembly-CSharp.dll",
             "nativeClass": "",
+            "fullManagedTypeName": "EndController",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
             "fullManagedTypeName": "GameController",
             "moduleName": "",
             "usedInScenes": []
@@ -449,7 +511,7 @@
         {
             "managedAssemblyName": "Assembly-CSharp.dll",
             "nativeClass": "",
-            "fullManagedTypeName": "MenuController",
+            "fullManagedTypeName": "NextRoundController",
             "moduleName": "",
             "usedInScenes": []
         },
@@ -457,6 +519,13 @@
             "managedAssemblyName": "Assembly-CSharp.dll",
             "nativeClass": "",
             "fullManagedTypeName": "PlayerController",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "StartMenuController",
             "moduleName": "",
             "usedInScenes": []
         },
@@ -471,6 +540,13 @@
             "managedAssemblyName": "Assembly-CSharp.dll",
             "nativeClass": "",
             "fullManagedTypeName": "TargetSpawner",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "TextController",
             "moduleName": "",
             "usedInScenes": []
         },
@@ -513,6 +589,13 @@
             "managedAssemblyName": "Unity.TextMeshPro.dll",
             "nativeClass": "",
             "fullManagedTypeName": "TMPro.TMP_FontAsset",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Unity.TextMeshPro.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "TMPro.TMP_InputField",
             "moduleName": "",
             "usedInScenes": []
         },
@@ -583,6 +666,20 @@
             "managedAssemblyName": "UnityEngine.UI.dll",
             "nativeClass": "",
             "fullManagedTypeName": "UnityEngine.UI.Image",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "UnityEngine.UI.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.UI.LayoutElement",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "UnityEngine.UI.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.UI.RectMask2D",
             "moduleName": "",
             "usedInScenes": []
         }
