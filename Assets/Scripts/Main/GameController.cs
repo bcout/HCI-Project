@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameController : MonoBehaviour
 {
     [SerializeField]
     private GameObject player;
-
-    [SerializeField]
-    private TargetSpawner target_spawner;
+    
 
     [SerializeField]
     private TextMeshProUGUI score;
 
     private TextController text_controller;
+    private TargetSpawner target_spawner;
 
     private bool timer_started;
     private float start_time;
@@ -37,6 +37,7 @@ public class GameController : MonoBehaviour
         timer_started = false;
 
         text_controller = GetComponent<TextController>();
+        target_spawner = GameObject.Find("TargetSpawner").GetComponent<TargetSpawner>();
     }
 
     private void Update()
@@ -59,6 +60,11 @@ public class GameController : MonoBehaviour
             }
         }
 
+        if (GameData.game_state == GameData.state.DONE)
+        {
+            SceneManager.LoadScene("Menu");
+        }
+
         text_controller.UpdateHUD(time_left);
     }
 
@@ -72,6 +78,10 @@ public class GameController : MonoBehaviour
     {
         Destroy(target);
         GameData.player_score++;
+        if (target_spawner == null)
+        {
+            target_spawner = GameObject.Find("TargetSpawner").GetComponent<TargetSpawner>();
+        }
         target_spawner.SpawnTarget();
     }
 }

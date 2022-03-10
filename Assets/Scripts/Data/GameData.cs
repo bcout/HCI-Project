@@ -20,7 +20,7 @@ public static class GameData
 
     static GameData()
     {
-        game_state = state.LOADING;
+        game_state = state.DONE;
         float padding = 0.5f;
         float distance = (Vector3.zero - Camera.main.transform.position).z;
         left_border_val = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, distance)).x + padding;

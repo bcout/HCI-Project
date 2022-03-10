@@ -12,6 +12,8 @@ public class MenuController : MonoBehaviour
     void Start()
     {
         start_button.onClick.AddListener(StartGame);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     // Update is called once per frame
@@ -22,6 +24,8 @@ public class MenuController : MonoBehaviour
 
     private void StartGame()
     {
+        GameData.game_state = GameData.state.LOADING;
+        GameData.current_round++;
         SceneManager.LoadScene("Main");
     }
 }
