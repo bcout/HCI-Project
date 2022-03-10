@@ -48,13 +48,15 @@ public class PlayerController : MonoBehaviour
         // Round 1: warmup
         // Round 2: control 
         // Round 3: gravity
-        // Round 4: control
-        // Round 5: area
-        if (GameData.current_round == 3)
+        // Round 4: gravity
+        // Round 5: control
+        // Round 6: area
+        // Round 7: area
+        if (GameData.current_round == 3 || GameData.current_round == 4)
         {
             current_assist_mode = assist_mode.GRAVITY;
         }
-        else if (GameData.current_round == 5)
+        else if (GameData.current_round == 6 || GameData.current_round == 7)
         {
             current_assist_mode = assist_mode.AREA;
         }
@@ -138,9 +140,9 @@ public class PlayerController : MonoBehaviour
                     GameObject selected_target = hit.collider.gameObject;
                     game_controller.Score(selected_target);
                 }
-                else
+                else if (!hit)
                 {
-                    GameData.player_misses++;
+                    game_controller.Miss();
                 }
 
                 //
