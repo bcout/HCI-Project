@@ -15,6 +15,13 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI score;
 
+    private TextController text_controller;
+
+    private bool timer_started;
+    private float start_time;
+    private float time_elapsed;
+    private float time_left;
+
     private void Awake()
     {
         GameInputActions game_input_actions = new GameInputActions();
@@ -22,14 +29,37 @@ public class GameController : MonoBehaviour
         game_input_actions.Game.Quit.performed += QuitGame;
     }
 
-    private void Update()
+    private void Start()
     {
-        UpdateScore();
+        start_time = 0;
+        time_elapsed = 0;
+        time_left = GameData.TIME_LIMIT;
+        timer_started = false;
+
+        text_controller = GetComponent<TextController>();
     }
 
-    private void UpdateScore()
+    private void Update()
     {
-        score.text = "Score: " + GameData.player_score;
+        if (GameData.game_state == GameData.state.RUNNING && !timer_started)
+        {
+            timer_started = true;
+            start_time = Time.timeSinceLevelLoad;
+        }
+
+        // Calculate the time remaining and update the HUD
+        if (GameData.game_state == GameData.state.RUNNING && timer_started)
+        {
+            time_elapsed = Time.timeSinceLevelLoad - start_time;
+            time_left = GameData.TIME_LIMIT - time_elapsed;
+            if (time_left <= 0)
+            {
+                time_left = 0.0f;
+                GameData.game_state = GameData.state.DONE;
+            }
+        }
+
+        text_controller.UpdateHUD(time_left);
     }
 
     private void QuitGame(InputAction.CallbackContext context)

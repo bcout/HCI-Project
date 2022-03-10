@@ -6,7 +6,7 @@ public class TargetController : MonoBehaviour
 {
     private Vector2[] possible_vectors = { Vector2.right, Vector2.left, Vector2.down, Vector2.up };
     private Vector2 velocity;
-    private float speed = 1f;
+    private float speed = 1.5f;
     private float width;
     private float height;
 
@@ -24,7 +24,7 @@ public class TargetController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameData.game_started)
+        if (GameData.game_state == GameData.state.RUNNING)
         {
             RandomlyChangeDirection();
         }

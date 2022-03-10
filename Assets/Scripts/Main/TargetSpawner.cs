@@ -30,9 +30,9 @@ public class TargetSpawner : MonoBehaviour
         }
         else
         {
-            if (!GameData.game_started)
+            if (GameData.game_state == GameData.state.LOADING)
             {
-                GameData.game_started = true;
+                GameData.game_state = GameData.state.RUNNING;
             }
         }
         //

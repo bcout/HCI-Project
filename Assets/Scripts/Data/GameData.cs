@@ -2,16 +2,25 @@
 using UnityEngine;
 public static class GameData
 {
-    public static bool game_started { get; set; }
+    public enum state
+    {
+        LOADING,
+        RUNNING,
+        DONE
+    }
+    public static state game_state { get; set; }
     public static float left_border_val { get; set; }
     public static float right_border_val { get; set; }
     public static float bottom_border_val { get; set; }
     public static float top_border_val { get; set; }
     public static int player_score { get; set; }
+    public static int current_round { get; set; }
+    public static int MAX_ROUNDS { get; }
+    public static float TIME_LIMIT { get; }
 
     static GameData()
     {
-        game_started = false;
+        game_state = state.LOADING;
         float padding = 0.5f;
         float distance = (Vector3.zero - Camera.main.transform.position).z;
         left_border_val = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, distance)).x + padding;
@@ -20,5 +29,8 @@ public static class GameData
         top_border_val = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, distance)).y - (2 * padding);
 
         player_score = 0;
+        current_round = 0;
+        MAX_ROUNDS = 5;
+        TIME_LIMIT = 30;
     }
 }

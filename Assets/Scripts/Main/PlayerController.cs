@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         LockCursorToGameWindow();
-        if (GameData.game_started)
+        if (GameData.game_state == GameData.state.RUNNING)
         {
             if (!cursor_spawned)
             {
