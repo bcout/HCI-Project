@@ -743,7 +743,6 @@ MonoBehaviour:
   round_text: {fileID: 666140101}
   timer_text: {fileID: 1207736422}
   score_text: {fileID: 1699195593}
-  misses_text: {fileID: 0}
 --- !u!1 &1699195591
 GameObject:
   m_ObjectHideFlags: 0
