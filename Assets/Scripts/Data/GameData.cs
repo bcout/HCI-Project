@@ -17,7 +17,7 @@ public static class GameData
         left_border_val = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, distance)).x + padding;
         right_border_val = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, distance)).x - padding;
         bottom_border_val = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, distance)).y + padding;
-        top_border_val = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, distance)).y - padding;
+        top_border_val = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, distance)).y - (2 * padding);
 
         player_score = 0;
     }

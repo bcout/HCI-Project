@@ -50,6 +50,7 @@ public class TargetSpawner : MonoBehaviour
 
     public void SpawnTarget()
     {
+        print("Spawning target");
         float spawn_x = Random.Range(GameData.left_border_val, GameData.right_border_val);
         float spawn_y = Random.Range(GameData.bottom_border_val, GameData.top_border_val);
         Vector2 spawn_point = new Vector2(spawn_x, spawn_y);
