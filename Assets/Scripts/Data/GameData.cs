@@ -32,8 +32,8 @@ public static class GameData
 
         player_score = 0;
         current_round = 0;
-        MAX_ROUNDS = 5;
-        TIME_LIMIT = 30;
+        MAX_ROUNDS = 1;
+        TIME_LIMIT = 10;
 
         scores = new int[MAX_ROUNDS];
     }

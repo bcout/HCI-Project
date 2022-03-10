@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 public class EndController : MonoBehaviour
 {
@@ -19,11 +20,28 @@ public class EndController : MonoBehaviour
     private void QuitGame()
     {
         // Write player's data to an output file
-        print(GameData.username);
+        WriteUserData();
+
+        Application.Quit();
+    }
+
+    private void WriteUserData()
+    {
+        // Output file path
+        string path = Application.dataPath + "/results.txt";
+
+        if (!File.Exists(path))
+        {
+            File.WriteAllText(path, "");
+        }
+
+        string results = "Experiment Results\n\n";
+        results += GameData.username + "\n" + "Scores\n";
         for (int i = 0; i < GameData.MAX_ROUNDS; i++)
         {
-            print("Round " + i + ": " + GameData.scores[i]);
+            results += "Round " + i + ": " + GameData.scores[i];
         }
-        Application.Quit();
+
+        File.WriteAllText(path, results);
     }
 }
