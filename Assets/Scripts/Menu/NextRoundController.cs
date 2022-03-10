@@ -16,16 +16,10 @@ public class NextRoundController : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void NextRound()
     {
         GameData.game_state = GameData.state.LOADING;
         GameData.current_round++;
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Main", LoadSceneMode.Single);
     }
 }

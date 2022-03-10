@@ -20,7 +20,7 @@ public class TargetSpawner : MonoBehaviour
     private void Update()
     {
         // Spawn all the targets before the player's cursor spawns (as a way to let the player get ready)
-        if (num_targets_spawned < MAX_TARGETS)
+        if (GameData.game_state == GameData.state.LOADING && num_targets_spawned < MAX_TARGETS)
         {
             if (coroutine_available)
             {
@@ -36,6 +36,26 @@ public class TargetSpawner : MonoBehaviour
             }
         }
         //
+
+        // Despawn all the targets when the level finishes, to give the player a breather before going to the menu
+        if (GameData.game_state == GameData.state.UNLOADING)
+        {
+            if (transform.childCount > 0)
+            {
+                foreach (Transform target in transform)
+                {
+                    if (coroutine_available)
+                    {
+                        StartCoroutine("DespawnTargetLoop", target);
+                        coroutine_available = false;
+                    }
+                }
+            }
+            else
+            {
+                GameData.game_state = GameData.state.DONE;
+            }
+        }
     }
 
     private IEnumerator SpawnTargetLoop()
@@ -50,10 +70,19 @@ public class TargetSpawner : MonoBehaviour
 
     public void SpawnTarget()
     {
-        print("Spawning target");
         float spawn_x = Random.Range(GameData.left_border_val, GameData.right_border_val);
         float spawn_y = Random.Range(GameData.bottom_border_val, GameData.top_border_val);
         Vector2 spawn_point = new Vector2(spawn_x, spawn_y);
         Instantiate(target_prefab, spawn_point, Quaternion.identity, transform);
+    }
+
+    private IEnumerator DespawnTargetLoop(Transform target)
+    {
+        target.parent = null;
+        Destroy(target.gameObject);
+
+        yield return new WaitForSeconds(0.1f);
+
+        coroutine_available = true;
     }
 }

@@ -6,7 +6,7 @@ using TMPro;
 public class TextController : MonoBehaviour
 {
     [SerializeField]
-    public TextMeshProUGUI round_text, timer_text, score_text;
+    private TextMeshProUGUI round_text, timer_text, score_text, misses_text;
     // Start is called before the first frame update
 
     public void UpdateHUD(float time_left)
@@ -14,6 +14,8 @@ public class TextController : MonoBehaviour
         UpdateRound();
         UpdateTimer(time_left);
         UpdateScore();
+
+        misses_text.text = "Misses: " + GameData.player_misses;
     }
     private void UpdateRound()
     {

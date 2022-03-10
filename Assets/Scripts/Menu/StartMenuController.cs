@@ -48,7 +48,5 @@ public class StartMenuController : MonoBehaviour
                 GameData.username += DIGITS[Random.Range(0, DIGITS.Length)];
             }
         }
-
-        print(GameData.username);
     }
 }

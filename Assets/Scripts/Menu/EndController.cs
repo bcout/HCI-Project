@@ -15,13 +15,13 @@ public class EndController : MonoBehaviour
         quit_button.onClick.AddListener(QuitGame);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+
+        // Write player's data to an output file
+        WriteUserData();
     }
 
     private void QuitGame()
     {
-        // Write player's data to an output file
-        WriteUserData();
-
         Application.Quit();
     }
 
@@ -36,10 +36,10 @@ public class EndController : MonoBehaviour
         }
 
         string results = "Experiment Results\n\n";
-        results += GameData.username + "\n" + "Scores\n";
+        results += GameData.username + "\n" + "Round, Hits, Misses\n";
         for (int i = 0; i < GameData.MAX_ROUNDS; i++)
         {
-            results += "Round " + i + ": " + GameData.scores[i];
+            results += i + "," + GameData.scores[i] + "," + GameData.misses[i] + "\n";
         }
 
         File.WriteAllText(path, results);

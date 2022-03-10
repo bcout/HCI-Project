@@ -1,5 +1,9 @@
 Experiment Results
 
-Brennan
-Scores
-Round 0: 4
+8134239927
+Round, Hits, Misses
+0,1,8
+1,0,10
+2,0,5
+3,4,7
+4,3,8

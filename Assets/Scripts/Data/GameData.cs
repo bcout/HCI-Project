@@ -6,6 +6,7 @@ public static class GameData
     {
         LOADING,
         RUNNING,
+        UNLOADING,
         DONE
     }
     public static state game_state { get; set; }
@@ -14,12 +15,14 @@ public static class GameData
     public static float bottom_border_val { get; set; }
     public static float top_border_val { get; set; }
     public static int player_score { get; set; }
+    public static int player_misses { get; set; }
     public static int current_round { get; set; }
     public static int MAX_ROUNDS { get; }
     public static float TIME_LIMIT { get; }
     public static int[] scores { get; set; }
+    public static int[] misses { get; set; }
     public static string username { get; set; }
-
+    
     static GameData()
     {
         game_state = state.DONE;
@@ -31,10 +34,12 @@ public static class GameData
         top_border_val = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, distance)).y - (2 * padding);
 
         player_score = 0;
+        player_misses = 0;
         current_round = 0;
-        MAX_ROUNDS = 1;
+        MAX_ROUNDS = 5;
         TIME_LIMIT = 10;
 
         scores = new int[MAX_ROUNDS];
+        misses = new int[MAX_ROUNDS];
     }
 }

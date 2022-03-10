@@ -9,10 +9,6 @@ public class GameController : MonoBehaviour
 {
     [SerializeField]
     private GameObject player;
-    
-
-    [SerializeField]
-    private TextMeshProUGUI score;
 
     private TextController text_controller;
     private TargetSpawner target_spawner;
@@ -21,13 +17,6 @@ public class GameController : MonoBehaviour
     private float start_time;
     private float time_elapsed;
     private float time_left;
-
-    private void Awake()
-    {
-        GameInputActions game_input_actions = new GameInputActions();
-        game_input_actions.Enable();
-        game_input_actions.Game.Quit.performed += QuitGame;
-    }
 
     private void Start()
     {
@@ -56,29 +45,36 @@ public class GameController : MonoBehaviour
             if (time_left <= 0)
             {
                 time_left = 0.0f;
-                GameData.game_state = GameData.state.DONE;
+                GameData.game_state = GameData.state.UNLOADING;
             }
         }
 
         if (GameData.game_state == GameData.state.DONE)
         {
             GameData.scores[GameData.current_round - 1] = GameData.player_score;
+            GameData.misses[GameData.current_round - 1] = GameData.player_misses;
             GameData.player_score = 0;
+            GameData.player_misses = 0;
 
             if (GameData.current_round >= GameData.MAX_ROUNDS)
             {
-                SceneManager.LoadScene("End");
+                SceneManager.LoadScene("End", LoadSceneMode.Single);
             }
             else
             {
-                SceneManager.LoadScene("BetweenRounds");
+                SceneManager.LoadScene("BetweenRounds", LoadSceneMode.Single);
             }
         }
 
         text_controller.UpdateHUD(time_left);
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            QuitGame();
+        }
     }
 
-    private void QuitGame(InputAction.CallbackContext context)
+    private void QuitGame()
     {
         Application.Quit();
     }
@@ -93,5 +89,10 @@ public class GameController : MonoBehaviour
             target_spawner = GameObject.Find("TargetSpawner").GetComponent<TargetSpawner>();
         }
         target_spawner.SpawnTarget();
+    }
+
+    public void Miss()
+    {
+        GameData.player_misses++;
     }
 }
