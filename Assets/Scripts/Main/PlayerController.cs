@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private GameObject cursor;
     private Vector3 mouse_position;
     private bool cursor_spawned;
+    private GameObject target_collided;
 
     private AudioSource audioSource;
 
@@ -25,22 +26,6 @@ public class PlayerController : MonoBehaviour
     }
 
     private assist_mode current_assist_mode;
-
-    // Used to initalize the event-driven input system
-    private void Awake()
-    {
-        /*
-        // PlayerInputActions is an auto-generated class containing all the input actions we defined in the editor
-        player_input_actions = new PlayerInputActions();
-        
-        // They start off as disabled, so enable the player's input detection
-        player_input_actions.Enable();
-
-        // Subscribe to the "click" event. HandleClick() will be called when this input is detected.
-        player_input_actions.Player.Click.performed -= HandleClick;
-        player_input_actions.Player.Click.performed += HandleClick;
-        */
-    }
 
     private void Start()
     {
@@ -60,7 +45,7 @@ public class PlayerController : MonoBehaviour
         {
             current_assist_mode = assist_mode.GRAVITY;
         }
-        else if (GameData.current_round == 6 || GameData.current_round == 7)
+        else if (GameData.current_round == 1 || GameData.current_round == 7)
         {
             current_assist_mode = assist_mode.AREA;
         }
@@ -68,6 +53,8 @@ public class PlayerController : MonoBehaviour
         {
             current_assist_mode = assist_mode.NONE;
         }
+
+        target_collided = null;
     }
 
     // Update is called once per frame
@@ -87,6 +74,11 @@ public class PlayerController : MonoBehaviour
         {
             HandleClick();
         }
+    }
+
+    public void HandleCollision(GameObject other)
+    {
+        target_collided = other;
     }
 
     private void UpdateCursorPosition()
@@ -122,7 +114,7 @@ public class PlayerController : MonoBehaviour
         if (GameData.game_state == GameData.state.RUNNING)
         {
             int layer_mask = LayerMask.GetMask("Targets");
-
+            
             if (current_assist_mode == assist_mode.NONE)
             {
                 // This does normal checking, where we check if there is an object below the cursor.
@@ -153,11 +145,17 @@ public class PlayerController : MonoBehaviour
                 {
                     game_controller.Miss();
                 }
-
             }
             else if (current_assist_mode == assist_mode.AREA)
             {
-                // Use the area cursor to detect when the player has selected a target
+                if (target_collided != null)
+                {
+                    game_controller.Score(target_collided);
+                }
+                else
+                {
+                    game_controller.Miss();
+                }
             }
         }
     }

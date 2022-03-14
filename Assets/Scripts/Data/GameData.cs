@@ -22,6 +22,8 @@ public static class GameData
     public static int[] scores { get; set; }
     public static int[] misses { get; set; }
     public static string username { get; set; }
+    public static float min_cursor_radius { get; }
+    public static float max_cursor_radius { get; }
     
     static GameData()
     {
@@ -41,5 +43,8 @@ public static class GameData
 
         scores = new int[MAX_ROUNDS];
         misses = new int[MAX_ROUNDS];
+
+        min_cursor_radius = 0.01f;
+        max_cursor_radius = 0.5f;
     }
 }
