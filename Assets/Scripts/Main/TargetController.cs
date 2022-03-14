@@ -6,7 +6,7 @@ public class TargetController : MonoBehaviour
 {
     private Vector2[] possible_vectors = { Vector2.right, Vector2.left, Vector2.down, Vector2.up };
     private Vector2 velocity;
-    private float speed = 1.5f;
+    private float speed = 0.9f;
     private float width;
     private float height;
 

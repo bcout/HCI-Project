@@ -6,7 +6,7 @@ public class TargetSpawner : MonoBehaviour
 {
     [SerializeField]
     private GameObject target_prefab;
-    private const int MAX_TARGETS = 35;
+    private const int MAX_TARGETS = 20;
     private int num_targets_spawned;
     private bool coroutine_available;
 
