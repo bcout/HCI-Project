@@ -16,8 +16,6 @@ public class PlayerController : MonoBehaviour
     private bool cursor_spawned;
     private GameObject target_collided;
 
-    private AudioSource audioSource;
-
     private enum assist_mode
     {
         NONE,
@@ -29,23 +27,22 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-
         cursor_spawned = false;
         GameData.player_misses = 0;
 
-        // Round 1: warmup
-        // Round 2: control 
-        // Round 3: gravity
-        // Round 4: gravity
-        // Round 5: control
-        // Round 6: area
-        // Round 7: area
-        if (GameData.current_round == 3 || GameData.current_round == 4)
+        /*
+         * round 1: warmup (normal)
+         * round 2: baseline (normal)
+         * round 3: area
+         * round 4: gravity
+         * round 5: gravity
+         * round 6: area
+         */
+        if (GameData.current_round == 4 || GameData.current_round == 5)
         {
             current_assist_mode = assist_mode.GRAVITY;
         }
-        else if (GameData.current_round == 1 || GameData.current_round == 7)
+        else if (GameData.current_round == 3 || GameData.current_round == 6)
         {
             current_assist_mode = assist_mode.AREA;
         }
@@ -123,7 +120,6 @@ public class PlayerController : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, .1f, layer_mask);
                 if (hit.collider != null)
                 {
-                    audioSource.Play(0);
                     GameObject selected_target = hit.collider.gameObject;
                     game_controller.Score(selected_target);
                 }
@@ -137,7 +133,6 @@ public class PlayerController : MonoBehaviour
                 var collider = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), 0.25f, layer_mask);
                 if (collider != null)
                 {
-                    audioSource.Play(0);
                     GameObject targ = collider.gameObject;
                     game_controller.Score(targ);
                 }

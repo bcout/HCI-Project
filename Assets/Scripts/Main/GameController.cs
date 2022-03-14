@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
 
     private TextController text_controller;
     private TargetSpawner target_spawner;
+    private AudioSource audio_source;
 
     private bool timer_started;
     private float start_time;
@@ -27,6 +28,7 @@ public class GameController : MonoBehaviour
 
         text_controller = GetComponent<TextController>();
         target_spawner = GameObject.Find("TargetSpawner").GetComponent<TargetSpawner>();
+        audio_source = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -82,6 +84,7 @@ public class GameController : MonoBehaviour
     // When the player successfully hits a target, this function is called
     public void Score(GameObject target)
     {
+        audio_source.Play(0);
         Destroy(target);
         GameData.player_score++;
         if (target_spawner == null)
