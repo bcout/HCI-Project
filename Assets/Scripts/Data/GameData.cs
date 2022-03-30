@@ -2,6 +2,9 @@
 using UnityEngine;
 public static class GameData
 {
+    private const int NO_ASSIST = 1;
+    private const int AREA_ASSIST = 2;
+    private const int GRAVITY_ASSIST = 3;
     public enum state
     {
         LOADING,
@@ -9,6 +12,7 @@ public static class GameData
         UNLOADING,
         DONE
     }
+
     public static state game_state { get; set; }
     public static float left_border_val { get; set; }
     public static float right_border_val { get; set; }
@@ -24,6 +28,7 @@ public static class GameData
     public static string username { get; set; }
     public static float min_cursor_radius { get; }
     public static float max_cursor_radius { get; }
+    public static int[][] latin_square { get; set; }
     
     static GameData()
     {
@@ -46,5 +51,22 @@ public static class GameData
 
         min_cursor_radius = 0.01f;
         max_cursor_radius = 0.5f;
+
+        FillLatinSquare();
+    }
+
+    private static void FillLatinSquare()
+    {
+        // AB: no assist
+        // CD: Area
+        // EF: Gravity 
+        int[] row_0 = { NO_ASSIST, NO_ASSIST, GRAVITY_ASSIST, AREA_ASSIST, GRAVITY_ASSIST, AREA_ASSIST };
+        int[] row_1 = { NO_ASSIST, AREA_ASSIST, NO_ASSIST, AREA_ASSIST, GRAVITY_ASSIST, GRAVITY_ASSIST };
+        int[] row_2 = { AREA_ASSIST, AREA_ASSIST, NO_ASSIST, GRAVITY_ASSIST, NO_ASSIST, GRAVITY_ASSIST };
+        int[] row_3 = { AREA_ASSIST, GRAVITY_ASSIST, AREA_ASSIST, GRAVITY_ASSIST, NO_ASSIST, NO_ASSIST };
+        int[] row_4 = { GRAVITY_ASSIST, GRAVITY_ASSIST, AREA_ASSIST, NO_ASSIST, AREA_ASSIST, NO_ASSIST };
+        int[] row_5 = { GRAVITY_ASSIST, NO_ASSIST, GRAVITY_ASSIST, NO_ASSIST, AREA_ASSIST, AREA_ASSIST };
+
+        latin_square = new int[][] { row_0, row_1, row_2, row_3, row_4, row_5 };
     }
 }
