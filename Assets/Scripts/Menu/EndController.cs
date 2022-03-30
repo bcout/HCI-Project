@@ -36,7 +36,9 @@ public class EndController : MonoBehaviour
         }
 
         string results = "Experiment Results\n\n";
-        results += GameData.username + "\n" + "Round, Hits, Misses\n";
+        results += GameData.username + "\n";
+        results += "Using latin square row " + GameData.LATIN_SQUARE_ROW + "\n"; 
+        results += "Round, Hits, Misses\n";
         for (int i = 0; i < GameData.MAX_ROUNDS; i++)
         {
             results += i + "," + GameData.scores[i] + "," + GameData.misses[i] + "\n";
