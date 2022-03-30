@@ -2,9 +2,13 @@
 using UnityEngine;
 public static class GameData
 {
-    private const int NO_ASSIST = 1;
-    private const int AREA_ASSIST = 2;
-    private const int GRAVITY_ASSIST = 3;
+    private const int NO_ASSIST = 0;
+    private const int AREA_ASSIST = 1;
+    private const int GRAVITY_ASSIST = 2;
+
+    // Change this value in each build
+    public const int LATIN_SQUARE_ROW = 1;
+
     public enum state
     {
         LOADING,
@@ -57,9 +61,6 @@ public static class GameData
 
     private static void FillLatinSquare()
     {
-        // AB: no assist
-        // CD: Area
-        // EF: Gravity 
         int[] row_0 = { NO_ASSIST, NO_ASSIST, GRAVITY_ASSIST, AREA_ASSIST, GRAVITY_ASSIST, AREA_ASSIST };
         int[] row_1 = { NO_ASSIST, AREA_ASSIST, NO_ASSIST, AREA_ASSIST, GRAVITY_ASSIST, GRAVITY_ASSIST };
         int[] row_2 = { AREA_ASSIST, AREA_ASSIST, NO_ASSIST, GRAVITY_ASSIST, NO_ASSIST, GRAVITY_ASSIST };

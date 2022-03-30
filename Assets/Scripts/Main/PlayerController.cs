@@ -19,8 +19,8 @@ public class PlayerController : MonoBehaviour
     private enum assist_mode
     {
         NONE,
-        GRAVITY,
-        AREA
+        AREA,
+        GRAVITY
     }
 
     private assist_mode current_assist_mode;
@@ -30,26 +30,8 @@ public class PlayerController : MonoBehaviour
         cursor_spawned = false;
         GameData.player_misses = 0;
 
-        /*
-         * round 1: warmup (normal)
-         * round 2: baseline (normal)
-         * round 3: area
-         * round 4: gravity
-         * round 5: gravity
-         * round 6: area
-         */
-        if (GameData.current_round == 4 || GameData.current_round == 5)
-        {
-            current_assist_mode = assist_mode.GRAVITY;
-        }
-        else if (GameData.current_round == 3 || GameData.current_round == 6)
-        {
-            current_assist_mode = assist_mode.AREA;
-        }
-        else
-        {
-            current_assist_mode = assist_mode.NONE;
-        }
+        current_assist_mode = (assist_mode)GameData.latin_square[GameData.LATIN_SQUARE_ROW][GameData.current_round-1];
+        print(current_assist_mode);
 
         target_collided = null;
     }
