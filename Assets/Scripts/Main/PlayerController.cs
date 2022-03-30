@@ -6,24 +6,36 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private const float MAX_CURSOR_WIDTH = 0.2f;
+    private const float MIN_SPEED_THRESHOLD = 50f;
+    private const int LAG_TIME = 120; //120 ms
+    private const int REDUC_TIME = 180; // 180 ms
 
     [SerializeField] private GameObject cursor_prefab;
     [SerializeField] private GameController game_controller;
+    [SerializeField] private Sprite target_sprite, cursor_sprite;
 
     private GameObject cursor;
     private Vector3 mouse_position;
-    private bool cursor_spawned;
-    private GameObject target_collided;
-    private float area_assist_radius;
     private Vector3 last_mouse_position;
 
-    private Vector3 mouse_delta { get { return Input.mousePosition - last_mouse_position; } }
+    private float area_assist_radius;
+
+    private bool cursor_spawned;
+    
+    private float mouse_delta { get { return (Input.mousePosition - last_mouse_position).sqrMagnitude; } }
 
     private enum assist_mode
     {
         NONE,
         AREA,
         GRAVITY
+    }
+
+    private enum cursor_state
+    {
+        STOPPED,
+        MOVING,
+        REDUCING
     }
 
     private assist_mode current_assist_mode;
@@ -43,26 +55,26 @@ public class PlayerController : MonoBehaviour
     void Update()
     {   
         LockCursorToGameWindow();
+        
         if (GameData.game_state == GameData.state.RUNNING)
         {
             if (!cursor_spawned)
             {
                 SpawnCursor();
             }
+
             UpdateCursorPosition();
-        }
 
-        if (current_assist_mode == assist_mode.AREA)
-        {
-            UpdateCursorSize();
-        }
+            if (current_assist_mode == assist_mode.AREA)
+            {
+                UpdateCursorSize();
+            }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            HandleClick();
-        }
-
-        Debug.Log(mouse_delta.sqrMagnitude);
+            if (Input.GetMouseButtonDown(0))
+            {
+                HandleClick();
+            }
+        }        
 
         last_mouse_position = Input.mousePosition;
     }
@@ -102,51 +114,48 @@ public class PlayerController : MonoBehaviour
 
     private void HandleClick()
     {
-        if (GameData.game_state == GameData.state.RUNNING)
-        {
-            int layer_mask = LayerMask.GetMask("Targets");
+        int layer_mask = LayerMask.GetMask("Targets");
             
-            if (current_assist_mode == assist_mode.NONE)
-            {
-                // This does normal checking, where we check if there is an object below the cursor.
-                // It only checks a single point, and no aim assist is applied.
+        if (current_assist_mode == assist_mode.NONE)
+        {
+            // This does normal checking, where we check if there is an object below the cursor.
+            // It only checks a single point, and no aim assist is applied.
 
-                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, .1f, layer_mask);
-                if (hit.collider != null)
-                {
-                    GameObject selected_target = hit.collider.gameObject;
-                    game_controller.Score(selected_target);
-                }
-                else if (!hit)
-                {
-                    game_controller.Miss();
-                }
-            }
-            else if (current_assist_mode == assist_mode.GRAVITY)
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, .1f, layer_mask);
+            if (hit.collider != null)
             {
-                var collider = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), 0.25f, layer_mask);
-                if (collider != null)
-                {
-                    GameObject targ = collider.gameObject;
-                    game_controller.Score(targ);
-                }
-                else if (!collider)
-                {
-                    game_controller.Miss();
-                }
+                GameObject selected_target = hit.collider.gameObject;
+                game_controller.Score(selected_target);
             }
-            else if (current_assist_mode == assist_mode.AREA)
+            else if (!hit)
             {
-                RaycastHit2D hit = Physics2D.CircleCast(Camera.main.ScreenToWorldPoint(Input.mousePosition), area_assist_radius, Vector2.zero, .1f, layer_mask);
-                if (hit.collider != null)
-                {
-                    GameObject selected_target = hit.collider.gameObject;
-                    game_controller.Score(selected_target);
-                }
-                else if (!hit)
-                {
-                    game_controller.Miss();
-                }
+                game_controller.Miss();
+            }
+        }
+        else if (current_assist_mode == assist_mode.GRAVITY)
+        {
+            var collider = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), 0.25f, layer_mask);
+            if (collider != null)
+            {
+                GameObject targ = collider.gameObject;
+                game_controller.Score(targ);
+            }
+            else if (!collider)
+            {
+                game_controller.Miss();
+            }
+        }
+        else if (current_assist_mode == assist_mode.AREA)
+        {
+            RaycastHit2D hit = Physics2D.CircleCast(Camera.main.ScreenToWorldPoint(Input.mousePosition), area_assist_radius, Vector2.zero, .1f, layer_mask);
+            if (hit.collider != null)
+            {
+                GameObject selected_target = hit.collider.gameObject;
+                game_controller.Score(selected_target);
+            }
+            else if (!hit)
+            {
+                game_controller.Miss();
             }
         }
     }
@@ -167,6 +176,14 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateCursorSize()
     {
-
+        if (mouse_delta >= MIN_SPEED_THRESHOLD)
+        {
+            // Increase area cursor size
+            cursor.GetComponent<SpriteRenderer>().sprite = target_sprite;
+        }
+        else
+        {
+            cursor.GetComponent<SpriteRenderer>().sprite = cursor_sprite;
+        }
     }
 }
