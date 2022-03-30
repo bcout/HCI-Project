@@ -7,7 +7,7 @@ public static class GameData
     private const int GRAVITY_ASSIST = 2;
 
     // Change this value in each build
-    public const int LATIN_SQUARE_ROW = 1;
+    public const int LATIN_SQUARE_ROW = 3;
 
     public enum state
     {

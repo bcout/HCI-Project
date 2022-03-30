@@ -5,16 +5,19 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject cursor_prefab;
+    private const float MAX_CURSOR_WIDTH = 0.2f;
 
-    [SerializeField]
-    private GameController game_controller;
+    [SerializeField] private GameObject cursor_prefab;
+    [SerializeField] private GameController game_controller;
 
     private GameObject cursor;
     private Vector3 mouse_position;
     private bool cursor_spawned;
     private GameObject target_collided;
+    private float area_assist_radius;
+    private Vector3 last_mouse_position;
+
+    private Vector3 mouse_delta { get { return Input.mousePosition - last_mouse_position; } }
 
     private enum assist_mode
     {
@@ -33,7 +36,7 @@ public class PlayerController : MonoBehaviour
         current_assist_mode = (assist_mode)GameData.latin_square[GameData.LATIN_SQUARE_ROW][GameData.current_round-1];
         print(current_assist_mode);
 
-        target_collided = null;
+        last_mouse_position = Input.mousePosition;
     }
 
     // Update is called once per frame
@@ -49,10 +52,19 @@ public class PlayerController : MonoBehaviour
             UpdateCursorPosition();
         }
 
+        if (current_assist_mode == assist_mode.AREA)
+        {
+            UpdateCursorSize();
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             HandleClick();
         }
+
+        Debug.Log(mouse_delta.sqrMagnitude);
+
+        last_mouse_position = Input.mousePosition;
     }
 
     public void HandleCollision(GameObject other)
@@ -125,11 +137,13 @@ public class PlayerController : MonoBehaviour
             }
             else if (current_assist_mode == assist_mode.AREA)
             {
-                if (target_collided != null)
+                RaycastHit2D hit = Physics2D.CircleCast(Camera.main.ScreenToWorldPoint(Input.mousePosition), area_assist_radius, Vector2.zero, .1f, layer_mask);
+                if (hit.collider != null)
                 {
-                    game_controller.Score(target_collided);
+                    GameObject selected_target = hit.collider.gameObject;
+                    game_controller.Score(selected_target);
                 }
-                else
+                else if (!hit)
                 {
                     game_controller.Miss();
                 }
@@ -149,5 +163,10 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
+    }
+
+    private void UpdateCursorSize()
+    {
+
     }
 }
