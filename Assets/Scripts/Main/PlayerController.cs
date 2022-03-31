@@ -12,9 +12,13 @@ public class PlayerController : MonoBehaviour
     private GameController game_controller;
 
     private GameObject cursor;
+    private GameObject gravity_cursor;
     private Vector3 mouse_position;
     private bool cursor_spawned;
     private GameObject target_collided;
+
+    private Vector3 targetPosition ;
+    private bool shouldWeMove;
 
     private enum assist_mode
     {
@@ -32,6 +36,13 @@ public class PlayerController : MonoBehaviour
 
         current_assist_mode = (assist_mode)GameData.latin_square[GameData.LATIN_SQUARE_ROW][GameData.current_round-1];
         print(current_assist_mode);
+        gravity_cursor = GameObject.CreatePrimitive(PrimitiveType.Sphere); 
+        gravity_cursor.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+        gravity_cursor.transform.position  = transform.position;
+        Renderer rend = gravity_cursor.GetComponent<Renderer>();
+        rend.material = Resources.Load<Material>("white");
+
+        gravity_cursor.active = false;
 
         target_collided = null;
     }
@@ -53,6 +64,12 @@ public class PlayerController : MonoBehaviour
         {
             HandleClick();
         }
+
+        if (shouldWeMove)
+        {
+            gravity_cursor.transform.position = Vector3.MoveTowards(gravity_cursor.transform.position, targetPosition, 0.1f);
+        }
+
     }
 
     public void HandleCollision(GameObject other)
@@ -62,6 +79,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateCursorPosition()
     {
+
         // This is the normal mouse movement with no gravity assistance applied
         mouse_position = Input.mousePosition;
         mouse_position = Camera.main.ScreenToWorldPoint(mouse_position);
@@ -83,7 +101,9 @@ public class PlayerController : MonoBehaviour
             RaycastHit2D cc = Physics2D.CircleCast(cursor.transform.position, 0.3f, Vector2.zero, 0.5f, layer_mask2);
             if (cc.collider != null)
             {
-                cursor.transform.position = cc.point;
+                gravity_cursor.active = true;
+                shouldWeMove = true;
+                targetPosition = cc.point;
             }
         }
     }
@@ -112,7 +132,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (current_assist_mode == assist_mode.GRAVITY)
             {
-                var collider = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), 0.25f, layer_mask);
+                var collider = Physics2D.OverlapCircle(gravity_cursor.transform.position, 0.25f, layer_mask);
                 if (collider != null)
                 {
                     GameObject targ = collider.gameObject;
@@ -122,6 +142,9 @@ public class PlayerController : MonoBehaviour
                 {
                     game_controller.Miss();
                 }
+                //shouldWeMove = false;
+                //gravity_cursor.active = false;
+                //gravity_cursor.transform.position = cursor.transform.position;
             }
             else if (current_assist_mode == assist_mode.AREA)
             {
