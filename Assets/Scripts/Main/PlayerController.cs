@@ -5,10 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private const float MAX_CURSOR_WIDTH = 0.2f;
-    private const float MIN_SPEED_THRESHOLD = 50f;
-    private const int LAG_TIME = 120; //120 ms
-    private const int REDUC_TIME = 180; // 180 ms
+    private const float CURSOR_RADIUS = 0.2f;
 
     [SerializeField] private GameObject cursor_prefab;
     [SerializeField] private GameController game_controller;
@@ -16,26 +13,14 @@ public class PlayerController : MonoBehaviour
 
     private GameObject cursor;
     private Vector3 mouse_position;
-    private Vector3 last_mouse_position;
-
-    private float area_assist_radius;
 
     private bool cursor_spawned;
-    
-    private float mouse_delta { get { return (Input.mousePosition - last_mouse_position).sqrMagnitude; } }
 
     private enum assist_mode
     {
         NONE,
         AREA,
         GRAVITY
-    }
-
-    private enum cursor_state
-    {
-        STOPPED,
-        MOVING,
-        REDUCING
     }
 
     private assist_mode current_assist_mode;
@@ -45,10 +30,8 @@ public class PlayerController : MonoBehaviour
         cursor_spawned = false;
         GameData.player_misses = 0;
 
-        current_assist_mode = (assist_mode)GameData.latin_square[GameData.LATIN_SQUARE_ROW][GameData.current_round-1];
+        current_assist_mode = (assist_mode)GameData.latin_square[GameData.latin_square_row][GameData.current_round-1];
         print(current_assist_mode);
-
-        last_mouse_position = Input.mousePosition;
     }
 
     // Update is called once per frame
@@ -65,23 +48,11 @@ public class PlayerController : MonoBehaviour
 
             UpdateCursorPosition();
 
-            if (current_assist_mode == assist_mode.AREA)
-            {
-                UpdateCursorSize();
-            }
-
             if (Input.GetMouseButtonDown(0))
             {
                 HandleClick();
             }
         }        
-
-        last_mouse_position = Input.mousePosition;
-    }
-
-    public void HandleCollision(GameObject other)
-    {
-        target_collided = other;
     }
 
     private void UpdateCursorPosition()
@@ -147,7 +118,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (current_assist_mode == assist_mode.AREA)
         {
-            RaycastHit2D hit = Physics2D.CircleCast(Camera.main.ScreenToWorldPoint(Input.mousePosition), area_assist_radius, Vector2.zero, .1f, layer_mask);
+            RaycastHit2D hit = Physics2D.CircleCast(Camera.main.ScreenToWorldPoint(Input.mousePosition), CURSOR_RADIUS, Vector2.zero, .1f, layer_mask);
             if (hit.collider != null)
             {
                 GameObject selected_target = hit.collider.gameObject;
@@ -172,18 +143,5 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
-    }
-
-    private void UpdateCursorSize()
-    {
-        if (mouse_delta >= MIN_SPEED_THRESHOLD)
-        {
-            // Increase area cursor size
-            cursor.GetComponent<SpriteRenderer>().sprite = target_sprite;
-        }
-        else
-        {
-            cursor.GetComponent<SpriteRenderer>().sprite = cursor_sprite;
-        }
     }
 }

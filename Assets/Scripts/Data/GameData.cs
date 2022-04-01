@@ -6,9 +6,6 @@ public static class GameData
     private const int AREA_ASSIST = 1;
     private const int GRAVITY_ASSIST = 2;
 
-    // Change this value in each build
-    public const int LATIN_SQUARE_ROW = 3;
-
     public enum state
     {
         LOADING,
@@ -30,9 +27,8 @@ public static class GameData
     public static int[] scores { get; set; }
     public static int[] misses { get; set; }
     public static string username { get; set; }
-    public static float min_cursor_radius { get; }
-    public static float max_cursor_radius { get; }
     public static int[][] latin_square { get; set; }
+    public static int latin_square_row { get; set; }
     
     static GameData()
     {
@@ -53,10 +49,8 @@ public static class GameData
         scores = new int[MAX_ROUNDS];
         misses = new int[MAX_ROUNDS];
 
-        min_cursor_radius = 0.01f;
-        max_cursor_radius = 0.5f;
-
         FillLatinSquare();
+        latin_square_row = -1;
     }
 
     private static void FillLatinSquare()
