@@ -5,17 +5,17 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject cursor_prefab;
+    private const float CURSOR_RADIUS = 0.2f;
 
-    [SerializeField]
-    private GameController game_controller;
+    [SerializeField] private GameObject cursor_prefab;
+    [SerializeField] private GameController game_controller;
+    [SerializeField] private Sprite target_sprite, cursor_sprite;
 
     private GameObject cursor;
     private GameObject gravity_cursor;
     private Vector3 mouse_position;
+
     private bool cursor_spawned;
-    private GameObject target_collided;
 
     private Vector3 targetPosition ;
     private bool shouldWeMove;
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
         cursor_spawned = false;
         GameData.player_misses = 0;
 
-        current_assist_mode = (assist_mode)GameData.latin_square[GameData.LATIN_SQUARE_ROW][GameData.current_round-1];
+        current_assist_mode = (assist_mode)GameData.latin_square[GameData.latin_square_row][GameData.current_round-1];
         print(current_assist_mode);
         gravity_cursor = GameObject.CreatePrimitive(PrimitiveType.Sphere); 
         gravity_cursor.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
@@ -51,30 +51,26 @@ public class PlayerController : MonoBehaviour
     void Update()
     {   
         LockCursorToGameWindow();
+        
         if (GameData.game_state == GameData.state.RUNNING)
         {
             if (!cursor_spawned)
             {
                 SpawnCursor();
             }
+            
             UpdateCursorPosition();
+            
+            if (Input.GetMouseButtonDown(0))
+            {
+                HandleClick();
+            }
+
+            if (shouldWeMove)
+            {
+                gravity_cursor.transform.position = Vector3.MoveTowards(gravity_cursor.transform.position, targetPosition, 0.1f);
+            }
         }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            HandleClick();
-        }
-
-        if (shouldWeMove)
-        {
-            gravity_cursor.transform.position = Vector3.MoveTowards(gravity_cursor.transform.position, targetPosition, 0.1f);
-        }
-
-    }
-
-    public void HandleCollision(GameObject other)
-    {
-        target_collided = other;
     }
 
     private void UpdateCursorPosition()
@@ -110,52 +106,51 @@ public class PlayerController : MonoBehaviour
 
     private void HandleClick()
     {
-        if (GameData.game_state == GameData.state.RUNNING)
-        {
-            int layer_mask = LayerMask.GetMask("Targets");
+        int layer_mask = LayerMask.GetMask("Targets");
             
-            if (current_assist_mode == assist_mode.NONE)
-            {
-                // This does normal checking, where we check if there is an object below the cursor.
-                // It only checks a single point, and no aim assist is applied.
+        if (current_assist_mode == assist_mode.NONE)
+        {
+            // This does normal checking, where we check if there is an object below the cursor.
+            // It only checks a single point, and no aim assist is applied.
 
-                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, .1f, layer_mask);
-                if (hit.collider != null)
-                {
-                    GameObject selected_target = hit.collider.gameObject;
-                    game_controller.Score(selected_target);
-                }
-                else if (!hit)
-                {
-                    game_controller.Miss();
-                }
-            }
-            else if (current_assist_mode == assist_mode.GRAVITY)
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, .1f, layer_mask);
+            if (hit.collider != null)
             {
-                var collider = Physics2D.OverlapCircle(gravity_cursor.transform.position, 0.25f, layer_mask);
-                if (collider != null)
-                {
-                    GameObject targ = collider.gameObject;
-                    game_controller.Score(targ);
-                }
-                else if (!collider)
-                {
-                    game_controller.Miss();
-                }
-                //shouldWeMove = false;
-                //gravity_cursor.active = false;
-                //gravity_cursor.transform.position = cursor.transform.position;
+                GameObject selected_target = hit.collider.gameObject;
+                game_controller.Score(selected_target);
             }
-            else if (current_assist_mode == assist_mode.AREA)
+            else if (!hit)
             {
-                if (target_collided != null)
-                {
-                    game_controller.Score(target_collided);
-                }
-                else
-                {
-                    game_controller.Miss();
-                }
+                game_controller.Miss();
+            }
+        }
+        else if (current_assist_mode == assist_mode.GRAVITY)
+        {
+            var collider = Physics2D.OverlapCircle(gravity_cursor.transform.position, 0.25f, layer_mask);
+            if (collider != null)
+            {
+                GameObject targ = collider.gameObject;
+                game_controller.Score(targ);
+            }
+            else if (!collider)
+            {
+                game_controller.Miss();
+            }
+            //shouldWeMove = false;
+            //gravity_cursor.active = false;
+            //gravity_cursor.transform.position = cursor.transform.position;
+        }
+        else if (current_assist_mode == assist_mode.AREA)
+        {
+            RaycastHit2D hit = Physics2D.CircleCast(Camera.main.ScreenToWorldPoint(Input.mousePosition), CURSOR_RADIUS, Vector2.zero, .1f, layer_mask);
+            if (hit.collider != null)
+            {
+                GameObject selected_target = hit.collider.gameObject;
+                game_controller.Score(selected_target);
+            }
+            else if (!hit)
+            {
+                game_controller.Miss();
             }
         }
     }
