@@ -42,9 +42,7 @@ public class PlayerController : MonoBehaviour
         Renderer rend = gravity_cursor.GetComponent<Renderer>();
         rend.material = Resources.Load<Material>("white");
 
-        gravity_cursor.active = false;
-
-        target_collided = null;
+        gravity_cursor.SetActive(false);
     }
 
     // Update is called once per frame
@@ -97,7 +95,7 @@ public class PlayerController : MonoBehaviour
             RaycastHit2D cc = Physics2D.CircleCast(cursor.transform.position, 0.3f, Vector2.zero, 0.5f, layer_mask2);
             if (cc.collider != null)
             {
-                gravity_cursor.active = true;
+                gravity_cursor.SetActive(true);
                 shouldWeMove = true;
                 targetPosition = cc.point;
             }
