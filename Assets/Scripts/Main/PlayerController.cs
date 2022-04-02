@@ -12,9 +12,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Sprite target_sprite, cursor_sprite;
 
     private GameObject cursor;
+    private Rigidbody2D cursor_rb;
     private Vector3 mouse_position;
-
     private bool cursor_spawned;
+
+    private float G = 11f;
+
+    private GameObject[] targets;
 
     private enum assist_mode
     {
@@ -30,7 +34,7 @@ public class PlayerController : MonoBehaviour
         cursor_spawned = false;
         GameData.player_misses = 0;
 
-        current_assist_mode = (assist_mode)GameData.latin_square[GameData.latin_square_row][GameData.current_round-1];
+        current_assist_mode = assist_mode.GRAVITY; //(assist_mode)GameData.latin_square[GameData.latin_square_row][GameData.current_round-1];
         print(current_assist_mode);
     }
 
@@ -59,11 +63,7 @@ public class PlayerController : MonoBehaviour
     {
 
         // This is the normal mouse movement with no gravity assistance applied
-        mouse_position = Input.mousePosition;
-        mouse_position = Camera.main.ScreenToWorldPoint(mouse_position);
-        mouse_position.z = 0;
-        cursor.transform.position = new Vector3(mouse_position.x, mouse_position.y, 0);
-
+        
         if (current_assist_mode == assist_mode.NONE || current_assist_mode == assist_mode.AREA)
         {
             // This is the normal mouse movement with no gravity assistance applied
@@ -75,12 +75,52 @@ public class PlayerController : MonoBehaviour
         else if (current_assist_mode == assist_mode.GRAVITY)
         {
 
-            int layer_mask2 = LayerMask.GetMask("Targets");
-            RaycastHit2D cc = Physics2D.CircleCast(cursor.transform.position, 0.3f, Vector2.zero, 0.5f, layer_mask2);
-            if (cc.collider != null)
+            mouse_position = Input.mousePosition;
+            mouse_position = Camera.main.ScreenToWorldPoint(mouse_position);
+            mouse_position.z = 0;
+            //cursor.transform.position = new Vector3(mouse_position.x, mouse_position.y, 0);
+
+            cursor_rb.gravityScale = 12f;
+            cursor_rb.mass = 1f;
+
+            targets = GameObject.FindGameObjectsWithTag("Target");
+
+            Vector3 wipi = new Vector3(mouse_position.x, mouse_position.y, 0);
+            Vector3 wi_sum = new Vector3(1, 1, 0);
+
+            foreach (GameObject tgt in targets)
             {
-                cursor.transform.position = Vector3.MoveTowards(cursor.transform.position, cc.point, 0.1f);
+                Rigidbody2D tgt_rb = tgt.GetComponent<Rigidbody2D>();
+
+                tgt_rb.mass = 4;
+
+                Vector3 x = (mouse_position - tgt_rb.transform.position);
+                
+                if (x.x < 0)
+                {
+                    x.x = -1 * x.x;
+                }
+
+                if (x.y < 0)
+                {
+                    x.y = -1 * x.y;
+                }
+
+                Vector3 wi = new Vector3( G / (Mathf.Pow(x.x,5) + 1), G / (Mathf.Pow(x.y, 5) + 1), 0);
+
+                wipi.x += (wi.x * tgt_rb.transform.position.x);
+                wipi.y += (wi.y * tgt_rb.transform.position.y);
+
+                wi_sum.x += wi.x;
+                wi_sum.y += wi.y;
             }
+
+            Vector3 c_pos = new Vector3(wipi.x/wi_sum.x, wipi.y / wi_sum.y, 0);
+
+            //cursor.transform.position = c_pos;
+
+            cursor.transform.position = Vector3.MoveTowards(cursor.transform.position, c_pos, 0.1f);
+
         }
     }
 
@@ -106,6 +146,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (current_assist_mode == assist_mode.GRAVITY)
         {
+
             var collider = Physics2D.OverlapCircle(cursor.transform.position, 0.25f, layer_mask);
             if (collider != null)
             {
@@ -114,6 +155,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (!collider)
             {
+                print(cursor.transform.position);
                 game_controller.Miss();
             }
         }
@@ -136,6 +178,7 @@ public class PlayerController : MonoBehaviour
     {
         // Instantiate the cursor for the player
         cursor = Instantiate(cursor_prefab, transform.position, transform.rotation, transform);
+        cursor_rb = cursor.AddComponent<Rigidbody2D>(); 
         cursor.name = "Cursor";
         cursor_spawned = true;
     }
