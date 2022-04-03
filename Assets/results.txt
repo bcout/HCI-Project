@@ -1,10 +1,11 @@
 Experiment Results
 
-0709805083
+
+Using latin square row -1
 Round, Hits, Misses
-0,24,18
-1,44,6
-2,14,27
-3,42,5
-4,45,8
-5,54,4
+0,0,0
+1,0,0
+2,0,0
+3,0,0
+4,0,0
+5,0,0

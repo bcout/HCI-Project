@@ -34,8 +34,7 @@ public class PlayerController : MonoBehaviour
         cursor_spawned = false;
         GameData.player_misses = 0;
 
-        current_assist_mode = assist_mode.GRAVITY; //(assist_mode)GameData.latin_square[GameData.latin_square_row][GameData.current_round-1];
-        print(current_assist_mode);
+        current_assist_mode = (assist_mode)GameData.latin_square[GameData.latin_square_row][GameData.current_round-1];
     }
 
     // Update is called once per frame
@@ -155,7 +154,6 @@ public class PlayerController : MonoBehaviour
             }
             else if (!collider)
             {
-                print(cursor.transform.position);
                 game_controller.Miss();
             }
         }
