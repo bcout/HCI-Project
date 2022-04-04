@@ -26,6 +26,9 @@ There will be 6 rounds, and the goal is the same for each: Use your mouse to cli
 ## Finishing the game
 Once all rounds are complete:
 1. Navigate to the `{executable name}_data/` folder present next to the executable you ran
+
+![DataFolder](https://user-images.githubusercontent.com/55854294/161597065-50e20c9b-f116-46e1-bfd5-a8aeb7019d99.png)
+
 2. Locate a file called "results.txt"
 3. Send that file to the person who gave you these instructions
 
